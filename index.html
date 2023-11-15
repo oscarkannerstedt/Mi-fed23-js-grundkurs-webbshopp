@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Website for Gottfrid Jästsons donuts shop">
     <meta property="og:title" content="Gottfrid Jästson">
     <meta property="og:type" content="Website">
     <meta property="og:url" content="https://Gottfrid-Jästson.com">
@@ -11,13 +11,32 @@
     <meta name="theme-color" content="#fafafa">
     <title>Gottfrid Jästson</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 </head>
 <body>
 
-    <header>
-        <h2>Gottfrid Jästson</h2> - <div id="cart"></div>
+    <header id="header">
+        <nav>
+            <a href="#header" aria-label="Navigera till första sidan">
+              <h1>Gottfrid Jästson</h1>
+            </a>
+            <a href="#shoppingCart" aria-label="Navigera till kundkorgen">
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </a>
+        </nav> 
     </header>
-    
+
+    <main>
+        <Article class="informationText">
+            <h2>Välkommen till Gottfrid Jästsons munk affär!</h2>
+            <p>Vi säljer utsökta munkar med hemleverans.</p>
+        </Article>
+
+        <div class="donutsWrapper"></div>
+
+        <div id="shoppingCart"></div>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
