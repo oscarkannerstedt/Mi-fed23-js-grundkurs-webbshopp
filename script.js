@@ -21,7 +21,7 @@ const products = [
     rating: 3,
     img: [
       {
-        src: "assets/photos/Blueberry-lemonade.jpg",
+        src: "assets/photos/Blueberry-Lemonade.jpg",
         alt: "Blueberry lemonade donut.",
       },
     ],
@@ -133,7 +133,7 @@ const products = [
     rating: 4,
     img: [
       {
-        src: "assets/photos/strawberry-confetti.png",
+        src: "assets/photos/Strawberry-Confetti.png",
         alt: "Strawberry confetti donut.",
       },
     ],
@@ -230,7 +230,13 @@ function addToCart(evt) {
   donutsToAdd.count = amountToAdd;
 
   console.log(donutsToAdd);
-
+  printShoppingCart();
   }
+
+/*---------------------------------------------*/
+/*skriv ut varukorgen om det finns varor i den*/
+/*---------------------------------------------*/
+
+function printShoppingCart() {}
 
 
