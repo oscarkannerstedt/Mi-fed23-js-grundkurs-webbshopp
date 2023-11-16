@@ -162,7 +162,7 @@ function printProducts() {
     </div>
     <h3 class="donutTitle">${donutsArray[i].name}</h3>
     <span class="donutPrice">Pris ${donutsArray[i].price} :-</span>
-    <div class="productsCount">
+    <div id="productsCount" class="productsCount">
         <button id="subtract${rendered + 1}" class="subtractBtn" data-operator="subtract">-</button>
         <span class="countText">Antal:</span>
         <span id="amount${rendered + 1}" class="amountValue">0</span>
@@ -184,7 +184,7 @@ const addToCartBtn = document.querySelectorAll('button[data-operator="addToCart"
   for (let i = 0; i < addBtn.length; i++) {
     addBtn[i].addEventListener('click', increaseAmount);
     subtractBtn[i].addEventListener('click', decreaseAmount);
-    addToCartBtn[i].addEventListener('click', addItemToCart)
+    addToCartBtn[i].addEventListener('click', addToCart);
   }
 
 /*---------------------------------------------*/
@@ -209,39 +209,28 @@ const addToCartBtn = document.querySelectorAll('button[data-operator="addToCart"
     }
   }
 
-/*-------------------------------------*/
-/*-------lägg till i varukorgen-------*/
-/*-------------------------------------*/
+/*---------------------------------------------*/
+/*-----------lägg till i varukorgen-----------*/
+/*---------------------------------------------*/
 
 const shoppingCartItems = document.querySelector('#shoppingCartItems');
 shoppingCartItems.innerHTML = "";
 
-function addItemToCart(evt) {
-  
+function addToCart(evt) {
+  let cartBtn = evt.target;
+  const productItem = cartBtn.parentElement;
+  const cartAmount = productItem.getElementsByClassName('productsCount')[0].getElementsByClassName('amountValue')[0];
+  const amountToAdd = parseInt(cartAmount.innerHTML);
+
+  if(amountToAdd <= 0) {
+    return;
+  }
+
+  const donutsToAdd = products.find(donut => donut.id == productItem.id);
+  donutsToAdd.count = amountToAdd;
+
+  console.log(donutsToAdd);
+
   }
 
 
-
-
-
-
-// function addAndSubtract() {
-//   const addBtn = document.querySelectorAll('button[data-operator="add"]');
-//   const subtractBtn = document.querySelectorAll('button[data-operator="subtract"]');
-  
-
-//   for (let i = 0; i < addBtn.length; i++) {
-//     addBtn[i].addEventListener('click', increaseAmount);
-//   }
-
-//   function increaseAmount(evt) {
-//     const index = evt.currentTarget.id.replace('add', '');
-//     const startAmount = document.querySelector(`#amount${index}`);
-//     let amountValue = Number(startAmount.innerText);
-//     startAmount.innerHTML = amountValue + 1;
-//     console.log(amountValue);
-//   }
-// }
-
-// lägg till vara i kundvagnen
-function addToCart() {}
