@@ -1,5 +1,3 @@
-const cart = document.querySelector("#shoppingCart");
-
 const products = [
   {
     id: 1,
@@ -18,7 +16,7 @@ const products = [
   {
     id: 2,
     name: "Blueberry Lemonade",
-    price: 10,
+    price: 15,
     category: "Donuts",
     rating: 3,
     img: [
@@ -46,7 +44,7 @@ const products = [
   {
     id: 4,
     name: "Blueberry Pancake",
-    price: 10,
+    price: 15,
     category: "Donuts",
     rating: 5,
     img: [
@@ -60,7 +58,7 @@ const products = [
   {
     id: 5,
     name: "Cinnamon Bun",
-    price: 10,
+    price: 15,
     category: "Donuts",
     rating: 4,
     img: [
@@ -116,7 +114,7 @@ const products = [
   {
     id: 9,
     name: "French Toast",
-    price: 10,
+    price: 15,
     category: "Donuts",
     rating: 4,
     img: [
@@ -130,7 +128,7 @@ const products = [
   {
     id: 10,
     name: "Strawberry Confetti",
-    price: 10,
+    price: 15,
     category: "Donuts",
     rating: 4,
     img: [
@@ -143,11 +141,13 @@ const products = [
   },
 ];
 
-// skall printa ut kundvagnen om det finns varor tillagda
-function printCart() {}
 
-// skall loopa igenom listan med produkter och printa ut dom med lägg till knappar
+/*---------------------------------------------*/
+/*---------Printar ut alla produkter----------*/
+/*---------------------------------------------*/
+
 const donutsContainer = document.querySelector(".donutsWrapper");
+
 function printProducts() {
   let donutsArray = [...products];
   donutsContainer.innerHTML = "";
@@ -161,7 +161,7 @@ function printProducts() {
         <img src="${donutsArray[i].img[0].src}" alt="${donutsArray[i].img[0].alt}" width="160">
     </div>
     <h3 class="donutTitle">${donutsArray[i].name}</h3>
-    <span class="donutPrice">Pris ${donutsArray[i].price}:-</span>
+    <span class="donutPrice">Pris ${donutsArray[i].price} :-</span>
     <div class="productsCount">
         <button id="subtract${rendered + 1}" class="subtractBtn" data-operator="subtract">-</button>
         <span class="countText">Antal:</span>
@@ -174,8 +174,74 @@ function printProducts() {
     rendered++;
   }
 }
-
 printProducts();
+
+const addBtn = document.querySelectorAll('button[data-operator="add"]');
+const subtractBtn = document.querySelectorAll('button[data-operator="subtract"]');
+const addToCartBtn = document.querySelectorAll('button[data-operator="addToCart"]');
+
+
+  for (let i = 0; i < addBtn.length; i++) {
+    addBtn[i].addEventListener('click', increaseAmount);
+    subtractBtn[i].addEventListener('click', decreaseAmount);
+    addToCartBtn[i].addEventListener('click', addItemToCart)
+  }
+
+/*---------------------------------------------*/
+/*------plus & minus för att välja antal------*/
+/*---------------------------------------------*/
+
+  function increaseAmount(evt) {
+    const index = evt.currentTarget.id.replace('add', '');
+    const startAmount = document.querySelector(`#amount${index}`);
+    let amountValue = Number(startAmount.innerText);
+    startAmount.innerHTML = amountValue + 1;
+  }
+
+  function decreaseAmount(evt) {
+    const index = evt.currentTarget.id.replace('subtract', '');
+    const startAmount = document.querySelector(`#amount${index}`);
+    let amountValue = Number(startAmount.innerText);
+    if(amountValue - 1 < 0) {
+      return;
+    } else {
+      startAmount.innerHTML = amountValue - 1;
+    }
+  }
+
+/*-------------------------------------*/
+/*-------lägg till i varukorgen-------*/
+/*-------------------------------------*/
+
+const shoppingCartItems = document.querySelector('#shoppingCartItems');
+shoppingCartItems.innerHTML = "";
+
+function addItemToCart(evt) {
+  
+  }
+
+
+
+
+
+
+// function addAndSubtract() {
+//   const addBtn = document.querySelectorAll('button[data-operator="add"]');
+//   const subtractBtn = document.querySelectorAll('button[data-operator="subtract"]');
+  
+
+//   for (let i = 0; i < addBtn.length; i++) {
+//     addBtn[i].addEventListener('click', increaseAmount);
+//   }
+
+//   function increaseAmount(evt) {
+//     const index = evt.currentTarget.id.replace('add', '');
+//     const startAmount = document.querySelector(`#amount${index}`);
+//     let amountValue = Number(startAmount.innerText);
+//     startAmount.innerHTML = amountValue + 1;
+//     console.log(amountValue);
+//   }
+// }
 
 // lägg till vara i kundvagnen
 function addToCart() {}
