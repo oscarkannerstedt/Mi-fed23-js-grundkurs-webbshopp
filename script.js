@@ -158,7 +158,7 @@ function printProducts() {
     donutsContainer.innerHTML += `
     <article class="donuts${rendered + 1}" id="${donutsArray[i].id}">
     <div class="images">
-        <img src="${donutsArray[i].img[0].src}" alt="${donutsArray[i].img[0].alt}" width="160">
+        <img src="${donutsArray[i].img[0].src}" alt="${donutsArray[i].img[0].alt}" width="160" loading="lazy">
     </div>
     <h3 class="donutTitle">${donutsArray[i].name}</h3>
     <span class="donutPrice">Pris ${donutsArray[i].price} :-</span>
@@ -213,9 +213,6 @@ const addToCartBtn = document.querySelectorAll('button[data-operator="addToCart"
 /*-----------lägg till i varukorgen-----------*/
 /*---------------------------------------------*/
 
-const shoppingCartItems = document.querySelector('#shoppingCartItems');
-shoppingCartItems.innerHTML = "";
-
 function addToCart(evt) {
   let cartBtn = evt.target;
   const productItem = cartBtn.parentElement;
@@ -230,6 +227,7 @@ function addToCart(evt) {
   donutsToAdd.count = amountToAdd;
 
   console.log(donutsToAdd);
+  console.log(amountToAdd);
   printShoppingCart();
   }
 
@@ -237,6 +235,64 @@ function addToCart(evt) {
 /*skriv ut varukorgen om det finns varor i den*/
 /*---------------------------------------------*/
 
-function printShoppingCart() {}
+function printShoppingCart() {
+  const shoppingCartItems = document.querySelector('#shoppingCartItems');
+  shoppingCartItems.innerHTML = "";
+
+  for(let i = 0; i < products.length; i++) {
+    if(products[i].count == 0) {
+      continue;
+    }
+
+    let price;
+    if(products[i].count >= 10) {
+      price = products[i].price * 0.9;
+    } else {
+      price = products[i].price;
+    }
+
+    shoppingCartItems.innerHTML += `
+    <div class="shoppingCartItemsRow">
+      <article>
+      <img src=${products[i].img[0].src} alt="${products[i].img[0].alt}" width="100" loading="lazy">
+      <p>${products[i].name}</p>
+      </article>
+
+      <article class="shoppingCartItemsPrice">
+        <span class="cartProductPrice">${price}</span>
+      </article>
+
+      <article class="shoppingCartItemsCount">
+        <label for="count">antal</label>
+        <input type="number" class="cartProductCount lock" id="${products[i].id}" name="antal" min="1" value="${products[i].count}">
+
+        <button role="button" class="btnRemoveItem" id="${products[i].id}" >Rensa</button>
+      </article>
+
+    </div>
+    `;
+  }
+
+  const removeProductBtn = document.getElementsByClassName('btnRemoveItem');
+  for (let i = 0; i < removeProductBtn.length; i++) {
+    let removeBtn = removeProductBtn[i];
+    removeBtn.addEventListener('click', removeProduct);
+  }
+
+  const quantityInput = document.getElementsByClassName('cartProductCount');
+  for (let i = 0; i < quantityInput.length; i++) {
+    const input = quantityInput[i];
+    input.addEventListener('change', quantityInputChanged);
+  }
+
+  const discountInput = document.getElementById('discount');
+  discountInput.addEventListener('change', giveDiscount);
+
+  giveDiscount();
+}
+
+
+
+
 
 
