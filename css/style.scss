@@ -1,73 +1,71 @@
-@import 'vendor/normalize';
+@import "vendor/normalize";
 
 * {
+  box-sizing: border-box;
+}
 
-    box-sizing: border-box;
-  
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-    main {
-      padding: 14px;
-      width: 100%;
-    }
+main {
+  padding: 14px;
+  width: 100%;
+}
 
 /*-------------------------------------*/
 /*--makes something visually invisible-*/
 /*--but accessible to screenreaders----*/
 /*-------------------------------------*/
 
-    .visuallyHidden {
-      position: absolute;
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
+.visuallyHidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
 
 /*-------------------------------------*/
 /*----------Header & navigation-------*/
 /*-------------------------------------*/
 
-  header {
-    height: 50px;
-    border: 1px solid;
+header {
+  height: 50px;
+  border: 1px solid;
 
-    nav {
-      background-color: white;
-      position: fixed;
-       top: 0;
-       width: 100%;
-       display: flex;
-       justify-content: space-between;
-       padding-left: 20px;
-       padding-right: 20px;
-    }
-
-    a {
-      color: black;
-      text-decoration: none;
-    }
-
-    h1 {
-        text-transform: uppercase;
-        font-size: 1.5rem;
-    }
-
-    .material-symbols-outlined {
-      position: relative;
-      top: 25px;
-      font-size: 2rem;
-    }
+  nav {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
   }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+
+  .material-symbols-outlined {
+    position: relative;
+    top: 25px;
+    font-size: 2rem;
+  }
+}
 
 /*-------------------------------------*/
 /*---------------Info text------------*/
@@ -89,44 +87,47 @@
 /*-------------Product items----------*/
 /*-------------------------------------*/
 
-  .donutsWrapper {
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 25px;
+.donutsWrapper {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 25px;
 
-    .images {
-      padding-top: 15px;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-    }
-
-    .donutPrice, .countText, .amountValue {
-      font-size: 1.2rem;
-    }
-
-    .productsCount {
-      padding: 10px;
-    }
-
-    .subtractBtn, .addBtn {
-      background-color: black;
-      color: white;
-      width: 35px;
-      height: 35px;
-      font-size: 1rem;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-
-    .addToCartBtn {
-      height: 35px;
-      width: 72px;
-      background-color: black;
-      color: white;
-    }
+  .images {
+    padding-top: 15px;
   }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .donutPrice,
+  .countText,
+  .amountValue {
+    font-size: 1.2rem;
+  }
+
+  .productsCount {
+    padding: 10px;
+  }
+
+  .subtractBtn,
+  .addBtn {
+    background-color: black;
+    color: white;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .addToCartBtn {
+    height: 35px;
+    width: 72px;
+    background-color: black;
+    color: white;
+  }
+}
 
 /*-------------------------------------*/
 /*-------------Shooping Cart----------*/
@@ -190,6 +191,7 @@
   padding-inline: 3rem;
   padding-block: 1rem;
   border-radius: 0.625rem;
+  cursor: pointer;
 }
 
 .btnRemoveItem {
@@ -200,4 +202,92 @@
   padding-inline: 0.4rem;
   padding-block: 0.3rem;
   font-size: 0.8rem;
+}
+
+/*-------------------------------------*/
+/*-------------Payment Form-----------*/
+/*-------------------------------------*/
+
+.checkoutContainer {
+  min-height: 100vh;
+  place-content: center;
+  margin: 5px;
+
+  h3 {
+    margin-left: 20px;
+  }
+
+  .checkoutForm {
+    width: 80vw;
+    max-width: 768px;
+    border: 1px solid #ddd;
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 20px;
+
+    .paymentMethodLabel {
+      border-bottom: none;
+      width: 80px;
+    }
+
+    .hiddenPaymentCard,
+    .hiddenPaymentInvoice {
+      display: none;
+    }
+
+    .showPaymentCard,
+    .showPaymentInvoice {
+      display: flex;
+    }
+
+    label {
+      margin-bottom: 15px;
+      position: relative;
+      border-bottom: 1px solid #ddd;
+
+      input[type="text"],
+      input[type="number"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px 0px;
+        margin-top: 20px;
+        border: none;
+        outline: none;
+      }
+    }
+    .check__boxes {
+      border-bottom: none;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 0.825rem;
+      color: #6b6b6b;
+    }
+  }
+}
+
+#orderButton {
+  padding: 15px 0px;
+  margin-top: 20px;
+  color: white;
+  background: rgb(86, 171, 82);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#clearOrder {
+  width: 150px;
+  padding: 15px 0px;
+  margin-left: 20px;
+  color: white;
+  background: rgb(196, 63, 65);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
