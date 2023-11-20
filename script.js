@@ -358,6 +358,14 @@ function updateTotalPrice() {
     totalQuantity += quantity;
   }
 
+  // Makes the count appears in header on top of the shopping cart symbol
+    const headerCountItems = document.querySelector('#headerCountItems');
+    headerCountItems.innerText = totalQuantity;
+    if(headerCountItems.innerHTML.trim() !== '') {
+      headerCountItems.classList.add('pink-background');
+    }
+  
+
   const paymentInvoice = document.querySelector('#paymentInvoice');
   const paymentCard = document.querySelector('#paymentCard');
 
@@ -378,6 +386,8 @@ function updateTotalPrice() {
   document.querySelector('#cartShippingPrice').innerHTML = toDisplayPrice(shippingPrice);
   document.querySelector('#cartTotalPrice').innerText = toDisplayPrice(total);
   document.querySelector('#cartPaymentPrice').innerHTML = toDisplayPrice(total + shippingPrice);
+
+  console.log(total);
 }
 
 function toDisplayPrice(num) {

@@ -62,9 +62,25 @@ header {
 
   .material-symbols-outlined {
     position: relative;
-    top: 25px;
+    top: 10px;
     font-size: 2rem;
   }
+
+  .headerCountItems {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    // background-color: pink;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 5;
+  }
+}
+
+.pink-background {
+  background-color: pink;
 }
 
 /*-------------------------------------*/
