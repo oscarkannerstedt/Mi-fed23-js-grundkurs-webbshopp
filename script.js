@@ -161,7 +161,7 @@ function printProducts() {
         <img src="${donutsArray[i].img[0].src}" alt="${donutsArray[i].img[0].alt}" width="160" loading="lazy">
     </div>
     <h3 class="donutTitle">${donutsArray[i].name}</h3>
-    <span class="donutPrice">Pris ${donutsArray[i].price} :-</span>
+    <span class="donutPrice">Pris ${donutsArray[i].price}:-</span>
     <div id="productsCount" class="productsCount">
         <button id="subtract${rendered + 1}" class="subtractBtn" data-operator="subtract">-</button>
         <span class="countText">Antal:</span>
@@ -358,7 +358,7 @@ function updateTotalPrice() {
     totalQuantity += quantity;
   }
 
-  // Makes the count appears in header on top of the shopping cart symbol
+  // Number of items in shopping cart showed in header
     const headerCountItems = document.querySelector('#headerCountItems');
     headerCountItems.innerText = totalQuantity;
     if(headerCountItems.innerHTML.trim() !== '') {
@@ -386,8 +386,6 @@ function updateTotalPrice() {
   document.querySelector('#cartShippingPrice').innerHTML = toDisplayPrice(shippingPrice);
   document.querySelector('#cartTotalPrice').innerText = toDisplayPrice(total);
   document.querySelector('#cartPaymentPrice').innerHTML = toDisplayPrice(total + shippingPrice);
-
-  console.log(total);
 }
 
 function toDisplayPrice(num) {

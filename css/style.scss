@@ -14,6 +14,12 @@ main {
 }
 
 /*-------------------------------------*/
+/*--------------Variables-------------*/
+/*-------------------------------------*/
+
+$robotoCondensed-font-family: 'Roboto Condensed';
+
+/*-------------------------------------*/
 /*--makes something visually invisible-*/
 /*--but accessible to screenreaders----*/
 /*-------------------------------------*/
@@ -38,6 +44,7 @@ main {
 header {
   height: 50px;
   border: 1px solid;
+  font-family: $robotoCondensed-font-family;
 
   nav {
     background-color: white;
@@ -57,6 +64,8 @@ header {
 
   h1 {
     text-transform: uppercase;
+    font-style: italic;
+    font-weight: 600;
     font-size: 1.5rem;
   }
 
@@ -72,10 +81,10 @@ header {
     right: 20px;
     border-radius: 50%;
     padding: 5px;
-    // background-color: pink;
     font-size: 1rem;
     font-weight: bold;
     z-index: 5;
+    font-weight: 600;
   }
 }
 
@@ -89,13 +98,17 @@ header {
 
 .informationText {
   text-align: center;
+  font-family: $robotoCondensed-font-family;
 
   h2 {
     font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
   }
 
   p {
     font-size: 1rem;
+    font-weight: 400;
   }
 }
 
@@ -107,6 +120,7 @@ header {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 25px;
+  font-family: $robotoCondensed-font-family;
 
   .images {
     padding-top: 15px;
@@ -114,12 +128,15 @@ header {
 
   h3 {
     font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 600;
   }
 
   .donutPrice,
   .countText,
   .amountValue {
     font-size: 1.2rem;
+    font-weight: 500;
   }
 
   .productsCount {
@@ -155,6 +172,12 @@ header {
   margin-inline: auto;
   margin-block-end: 4rem;
   padding-top: 60px;
+  font-family: $robotoCondensed-font-family;
+
+  h2 {
+    font-weight: 600;
+    font-style: italic;
+  }
 }
 
 .checkoutHeader {
@@ -163,12 +186,16 @@ header {
   padding-inline: 0.5rem;
   margin-block-end: 1rem;
   border-radius: 0.625rem;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .shoppingCartItemsRow {
   display: grid;
   grid-template-columns: 3fr 1fr 2fr;
   align-items: center;
+  font-family: $robotoCondensed-font-family;
+  font-weight: 500;
 
   .shoppingCartProduct {
     text-align: left;
@@ -192,6 +219,8 @@ header {
 .checkoutCartSum {
   text-align: right;
   margin-block-end: 2rem;
+  font-family: $robotoCondensed-font-family;
+  font-weight: 500;
 }
 
 .checkoutCartConfirm {
@@ -228,9 +257,12 @@ header {
   min-height: 100vh;
   place-content: center;
   margin: 5px;
+  font-family: $robotoCondensed-font-family;
 
   h3 {
     margin-left: 20px;
+    font-weight: 600;
+    font-style: italic;
   }
 
   .checkoutForm {
