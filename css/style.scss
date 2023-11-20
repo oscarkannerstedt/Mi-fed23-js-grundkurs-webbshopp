@@ -16,6 +16,24 @@
     }
 
 /*-------------------------------------*/
+/*--makes something visually invisible-*/
+/*--but accessible to screenreaders----*/
+/*-------------------------------------*/
+
+    .visuallyHidden {
+      position: absolute;
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+/*-------------------------------------*/
 /*----------Header & navigation-------*/
 /*-------------------------------------*/
 
@@ -110,3 +128,76 @@
     }
   }
 
+/*-------------------------------------*/
+/*-------------Shooping Cart----------*/
+/*-------------------------------------*/
+
+.shoppingCart {
+  width: 90vw;
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-block-end: 4rem;
+  padding-top: 60px;
+}
+
+.checkoutHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+  margin-block-end: 1rem;
+  border-radius: 0.625rem;
+}
+
+.shoppingCartItemsRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  align-items: center;
+
+  .shoppingCartProduct {
+    text-align: left;
+  }
+
+  .cartProductPrice {
+    text-align: left;
+  }
+
+  .shoppingCartItemsCount {
+    text-align: right;
+  }
+
+  .cartProductCount {
+    width: 2.5rem;
+    margin-inline-end: 0.1rem;
+    height: 1.55rem;
+  }
+}
+
+.checkoutCartSum {
+  text-align: right;
+  margin-block-end: 2rem;
+}
+
+.checkoutCartConfirm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn {
+  border: none;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+  border-radius: 0.625rem;
+}
+
+.btnRemoveItem {
+  border: none;
+  color: hsla(0, 71%, 97%, 1);
+  background-color: hsla(359, 53%, 51%, 1);
+  cursor: pointer;
+  padding-inline: 0.4rem;
+  padding-block: 0.3rem;
+  font-size: 0.8rem;
+}

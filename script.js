@@ -253,7 +253,7 @@ function printShoppingCart() {
 
     shoppingCartItems.innerHTML += `
     <div class="shoppingCartItemsRow">
-      <article>
+      <article class="shoppingCartProduct">
       <img src=${products[i].img[0].src} alt="${products[i].img[0].alt}" width="100" loading="lazy">
       <p>${products[i].name}</p>
       </article>
@@ -263,7 +263,7 @@ function printShoppingCart() {
       </article>
 
       <article class="shoppingCartItemsCount">
-        <label for="count">antal</label>
+        <label class="visuallyHidden" for="count">antal</label>
         <input type="number" class="cartProductCount lock" id="${products[i].id}" name="antal" min="1" value="${products[i].count}">
 
         <button role="button" class="btnRemoveItem" id="${products[i].id}" >Rensa</button>
@@ -290,6 +290,33 @@ function printShoppingCart() {
 
   giveDiscount();
 }
+
+/*---------------------------------------------*/
+/*-----Function for order & order button------*/
+/*---------------------------------------------*/
+
+document.querySelector('#goToForm').addEventListener('click', goToForm);
+
+function goToForm() {
+  let scroll = document.getElementById('scroll');
+  scroll.scrollIntoView();
+}
+
+/*---------------------------------------------*/
+/*---------Remove article from cart-----------*/
+/*---------------------------------------------*/
+
+function removeProduct(evt) {
+  let removeBtnClicked = evt.target;
+  for(let i = 0; i < products.length; i++) {
+    if(removeBtnClicked.id == products[i].id) {
+      products[i].count = 0;
+    }
+  }
+  printShoppingCart();
+}
+
+
 
 
 

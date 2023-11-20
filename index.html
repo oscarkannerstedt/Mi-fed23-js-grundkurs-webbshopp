@@ -34,16 +34,38 @@
 
         <div class="donutsWrapper"></div>
 
-        <section id="shoppingCart">
+        <section class="shoppingCart" id="shoppingCart">
             <h2>Varukorg</h2>
-        <section id="shoppingCartItems"></section>
 
-        <label for="discount" title="Discount">
-            Rabattkod
-            <input type="text" id="discount" class="lock" name="discount">
-        </label>
+            <header class="checkoutHeader">
+                <h3>Produkt</h3>
+                <h3>Pris</h3>
+                <h3>Antal</h3>
+            </header>
 
-        
+            <section id="shoppingCartItems"></section>
+
+            <label for="discount" title="Discount">
+                Rabattkod
+                <input type="text" id="discount" class="lock" name="discount">
+            </label>
+
+            <div class="checkoutCartSum">
+                <span>Totalt: </span>
+                <span id="cartTotalPrice"></span>
+                <br>
+                <span>Frakt: </span>
+                <span id="cartShippingPrice"></span>
+                <br><br>
+                <span>Att betala: </span>
+                <span id="cartPaymentPrice"></span>
+            </div>
+
+            <div class="checkoutCartConfirm">
+                <button class="btn btn-order" id="goToForm">Beställ</button>
+            </div>
+
+
         </section>
 
     </main>
