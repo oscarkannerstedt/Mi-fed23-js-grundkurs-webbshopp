@@ -43,12 +43,13 @@ $robotoCondensed-font-family: 'Roboto Condensed';
 
 header {
   height: 50px;
-  border: 1px solid;
   font-family: $robotoCondensed-font-family;
 
   nav {
     background-color: white;
+    opacity: 90%;
     position: fixed;
+    z-index: 4;
     top: 0;
     width: 100%;
     display: flex;
@@ -229,6 +230,11 @@ header {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  & button:first-child {
+    background-color: hsl(117, 35%, 50%, 1);
+    color: hsla(0, 71%, 97%, 1);
+  }
 }
 
 .btn {
@@ -255,6 +261,7 @@ header {
 
 .checkoutContainer {
   min-height: 100vh;
+  display: grid;
   place-content: center;
   margin: 5px;
   font-family: $robotoCondensed-font-family;
