@@ -289,6 +289,7 @@ function printShoppingCart() {
   discountInput.addEventListener('change', giveDiscount);
 
   updateTotalPrice();
+  giveMondayDiscount();
   giveDiscount();
 }
 
@@ -386,6 +387,26 @@ function toDisplayPrice(num) {
 /*---------------------------------------------*/
 /*-----Monday discount 10% before 10.00-------*/
 /*---------------------------------------------*/
+
+function giveMondayDiscount() {}
+
+/*---------------------------------------------*/
+/*------------Discount code input-------------*/
+/*---------------------------------------------*/
+const discountInput = document.querySelector('#discount');
+discountInput.addEventListener('change', giveDiscount);
+
+function giveDiscount() {
+  if(discountInput.value == 'TOMTEN') {
+    let newPrice = document.querySelector('#cartTotalPrice').innerHTML.replace(':-', '');
+    newPrice = Number(newPrice * 0);
+    document.querySelector('#cartPaymentPrice').innerHTML = newPrice + ':-';
+  } else {
+    toDisplayPrice();
+    updateTotalPrice();
+    giveMondayDiscount();
+  }
+}
 
 
 
