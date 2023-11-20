@@ -288,6 +288,7 @@ function printShoppingCart() {
   const discountInput = document.getElementById('discount');
   discountInput.addEventListener('change', giveDiscount);
 
+  updateTotalPrice();
   giveDiscount();
 }
 
@@ -315,6 +316,77 @@ function removeProduct(evt) {
   }
   printShoppingCart();
 }
+
+/*---------------------------------------------*/
+/*--Update total price when changed quantity--*/
+/*---------------------------------------------*/
+
+function quantityInputChanged(evt) {
+  const input = evt.target;
+  if(isNaN(input.value) || input.value <= 0) {
+    input.value = 1;
+  }
+
+  for(let i = 0; i < products.length; i++) {
+    if(input.id == products[i].id) {
+      products[i].count = input.value;
+    }
+  }
+  printShoppingCart();
+}
+
+/*---------------------------------------------*/
+/*---Update total sum when article removed----*/
+/*---------------------------------------------*/
+
+function updateTotalPrice() {
+  const checkoutCart = document.getElementsByClassName("shoppingCartItems")[0];
+  const cartRows = checkoutCart.getElementsByClassName("shoppingCartItemsRow");
+  let total = 0;
+  let totalQuantity = 0;
+
+  for(let i = 0; i < cartRows.length; i++) {
+    const row = cartRows[i];
+    const productPrice = row.getElementsByClassName("cartProductPrice")[0];
+    const productQuantity = row.getElementsByClassName("cartProductCount")[0];
+
+    const price = Number(productPrice.innerText);
+    const quantity = Number(productQuantity.value);
+
+    total = total + price * quantity;
+    totalQuantity += quantity;
+  }
+
+  const paymentInvoice = document.querySelector('#paymentInvoice');
+  const paymentCard = document.querySelector('#paymentCard');
+
+  if(total > 800) {
+    paymentInvoice.disabled = true;
+    paymentCard.checked = true;
+    switchPayment('paymentCard');
+  } else {
+    paymentInvoice.disabled = false;
+  }
+
+  let shippingPrice = 25 + total * 0.1;
+
+  if (totalQuantity > 15) {
+    shippingPrice = 0;
+  }
+
+  document.querySelector('#cartShippingPrice').innerHTML = toDisplayPrice(shippingPrice);
+  document.querySelector('#cartTotalPrice').innerText = toDisplayPrice(total);
+  document.querySelector('#cartPaymentPrice').innerHTML = toDisplayPrice(total + shippingPrice);
+}
+
+function toDisplayPrice(num) {
+  return (Math.round((num + Number.EPSILON) * 100) / 100).toFixed(2) + ':-';
+}
+
+/*---------------------------------------------*/
+/*-----Monday discount 10% before 10.00-------*/
+/*---------------------------------------------*/
+
 
 
 

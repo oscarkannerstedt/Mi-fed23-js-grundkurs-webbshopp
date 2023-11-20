@@ -43,7 +43,7 @@
                 <h3>Antal</h3>
             </header>
 
-            <section id="shoppingCartItems"></section>
+            <section id="shoppingCartItems" class="shoppingCartItems"></section>
 
             <label for="discount" title="Discount">
                 Rabattkod
@@ -64,9 +64,90 @@
             <div class="checkoutCartConfirm">
                 <button class="btn btn-order" id="goToForm">Beställ</button>
             </div>
-
-
         </section>
+
+        <section class="checkoutContainer" id="scroll">
+            <h3>Dina uppgifter:</h3>
+            <form class="checkoutForm">
+              <label for="firstName">
+                <input type="text" id="firstName" class="checkoutValidatedForm lock">
+                <span>Förnamn</span>
+              </label>
+              <label for="surName">
+                <input type="text" id="surName" class="checkoutValidatedForm lock">
+                <span>Efternamn</span>
+              </label>
+              <label for="address">
+                <input type="text" id="address" class="checkoutValidatedForm lock">
+                <span>Adress (gata)</span>
+              </label>
+              <label for="zipCode">
+                <input type="text" id="zipCode" class="checkoutValidatedForm lock">
+                <span id="zipCodeSpan">Postnummer</span>
+              </label>
+              <label for="cityName">
+                <input type="text" id="cityName" class="checkoutValidatedForm lock">
+                <span>Postort</span>
+              </label>
+              <label for="buzzCode">
+                <input type="text" id="buzzCode" class="lock">
+                <span>Eventuell portkod</span>
+              </label>
+              <label for="phoneNumber">
+                <input type="text" id="phoneNumber" class="checkoutValidatedForm lock">
+                <span id="phoneNumberSpan">Telefonnummer</span>
+              </label>
+              <label for="email">
+                <input type="email" id="email" class="checkoutValidatedForm lock">
+                <span>E-postadress</span>
+              </label>
+    
+              <p>Välj betalsätt:</p>
+              <label class="paymentMethodLabel" for="paymentCard">
+                <input id="paymentCard" class="lock" type="radio" name="radio">
+                Kort
+              </label>
+    
+              <label class="paymentMethodLabel" for="paymentInvoice">
+                <input id="paymentInvoice" class="lock" type="radio" name="radio">
+                Faktura
+              </label>
+    
+              <div class="hiddenPaymentCard">
+                <label for="cardNumber">
+                  <input type="number" id="cardNumber" class="checkoutValidatedForm lock">
+                  <span>Kortnummer</span>
+                </label>
+                <label for="expiryDate">
+                  <input type="number" id="expiryDate" class="checkoutValidatedForm lock">
+                  <span>Utgångsdatum</span>
+                </label>
+                <label for="cvc">
+                  <input type="number" id="cvc" class="checkoutValidatedForm lock">
+                  <span>CVC-kod</span>
+                </label>
+              </div>
+              <div class="hiddenPaymentInvoice">
+                <label for="socialSecurityNumber">
+                  <input type="text" id="socialSecurityNumber" class="checkoutValidatedForm lock">
+                  <span id="socialSecurityNumberSpan">Personnummer</span>
+                </label>
+              </div>
+    
+              <label for="storageData" class="checkBoxes">
+                <input type="checkbox" id="storageData" class="checkoutValidatedCheckbox lock">
+                Jag godkänner Gottfrid Jästsons behandling av mina personuppgifter
+              </label>
+              <label for="newsLetter" class="checkBoxes">
+                <input type="checkbox" id="newsLetter" class="lock" checked>
+                Jag vill prenumerera på Gottfrid Jästsons nyhetsbrev!
+              </label>
+    
+              <button type="submit" id="orderButton" class="lock">Skicka beställning</button>
+              <p id="orderMessage"></p>
+            </form>
+            <button id="clearOrder">Rensa beställning</button>
+          </section>
 
     </main>
 
