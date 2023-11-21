@@ -43,6 +43,7 @@ $robotoCondensed-font-family: 'Roboto Condensed';
 
 header {
   height: 50px;
+  margin-bottom: 25px;
   font-family: $robotoCondensed-font-family;
 
   nav {
@@ -83,7 +84,6 @@ header {
     border-radius: 50%;
     padding: 5px;
     font-size: 1rem;
-    font-weight: bold;
     z-index: 5;
     font-weight: 600;
   }
@@ -123,8 +123,11 @@ header {
   padding-bottom: 25px;
   font-family: $robotoCondensed-font-family;
 
-  .images {
+  img {
     padding-top: 15px;
+    width: 160px;
+    height: 180px;
+
   }
 
   h3 {
@@ -347,3 +350,12 @@ header {
   border-radius: 10px;
   cursor: pointer;
 }
+
+/*-------------------------------------*/
+/*---------------Imports--------------*/
+/*-------------------------------------*/
+
+@import 'mobile-large';
+@import 'tablet';
+@import 'desktop';
+@import 'desktop-large';
