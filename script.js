@@ -1,10 +1,24 @@
 const products = [
   {
     id: 1,
+    name: "S`Mores",
+    price: 20,
+    category: "Donuts",
+    rating: 5,
+    img: [
+      {
+        src: "assets/photos/s-mores.png",
+        alt: "S`Mores donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 2,
     name: "Bacon in the Sun",
     price: 10,
     category: "Donuts",
-    rating: 5,
+    rating: 4,
     img: [
       {
         src: "assets/photos/bacon-in-the-sun.png",
@@ -14,7 +28,7 @@ const products = [
     count: 0,
   },
   {
-    id: 2,
+    id: 3,
     name: "Blueberry Lemonade",
     price: 15,
     category: "Donuts",
@@ -28,7 +42,7 @@ const products = [
     count: 0,
   },
   {
-    id: 3,
+    id: 4,
     name: "Beach Ball",
     price: 10,
     category: "Donuts",
@@ -42,11 +56,11 @@ const products = [
     count: 0,
   },
   {
-    id: 4,
+    id: 5,
     name: "Blueberry Pancake",
     price: 15,
     category: "Donuts",
-    rating: 5,
+    rating: 4,
     img: [
       {
         src: "assets/photos/blueberry-pancake.png",
@@ -56,11 +70,11 @@ const products = [
     count: 0,
   },
   {
-    id: 5,
+    id: 6,
     name: "Cinnamon Bun",
-    price: 15,
+    price: 20,
     category: "Donuts",
-    rating: 4,
+    rating: 5,
     img: [
       {
         src: "assets/photos/cinnamon-bun.png",
@@ -70,9 +84,9 @@ const products = [
     count: 0,
   },
   {
-    id: 6,
+    id: 7,
     name: "Chocolate Explosion",
-    price: 10,
+    price: 15,
     category: "Donuts",
     rating: 4,
     img: [
@@ -84,11 +98,11 @@ const products = [
     count: 0,
   },
   {
-    id: 7,
+    id: 8,
     name: "Chocolate Caramel Crunch",
     price: 10,
     category: "Donuts",
-    rating: 4,
+    rating: 3,
     img: [
       {
         src: "assets/photos/chocolate-caramel-crunch.png",
@@ -98,7 +112,7 @@ const products = [
     count: 0,
   },
   {
-    id: 8,
+    id: 9,
     name: "Cookies & Cream",
     price: 10,
     category: "Donuts",
@@ -112,7 +126,7 @@ const products = [
     count: 0,
   },
   {
-    id: 9,
+    id: 10,
     name: "French Toast",
     price: 15,
     category: "Donuts",
@@ -126,15 +140,113 @@ const products = [
     count: 0,
   },
   {
-    id: 10,
+    id: 11,
     name: "Strawberry Confetti",
+    price: 15,
+    category: "Donuts",
+    rating: 5,
+    img: [
+      {
+        src: "assets/photos/Strawberry-Confetti.png",
+        alt: "Strawberry confetti donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 12,
+    name: "Coconut Island Blis",
+    price: 10,
+    category: "Donuts",
+    rating: 3,
+    img: [
+      {
+        src: "assets/photos/coconut-island-bliss.png",
+        alt: "Coconut island bliss donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 13,
+    name: "Midnight Madness",
+    price: 20,
+    category: "Donuts",
+    rating: 5,
+    img: [
+      {
+        src: "assets/photos/Midnight-Madness.png",
+        alt: "Midnight madness donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 14,
+    name: "The Flip Flop",
+    price: 10,
+    category: "Donuts",
+    rating: 3,
+    img: [
+      {
+        src: "assets/photos/flip-flop.png",
+        alt: "Flip flop donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 15,
+    name: "Sunrise",
     price: 15,
     category: "Donuts",
     rating: 4,
     img: [
       {
-        src: "assets/photos/Strawberry-Confetti.png",
-        alt: "Strawberry confetti donut.",
+        src: "assets/photos/sunrise.png",
+        alt: "Sunrise donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 16,
+    name: "Peanut Butter & Jelly",
+    price: 20,
+    category: "Donuts",
+    rating: 5,
+    img: [
+      {
+        src: "assets/photos/peanut-butter-jelly.png",
+        alt: "Peanut butter jelly donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 17,
+    name: "Peanut Butter Paradise",
+    price: 20,
+    category: "Donuts",
+    rating: 5,
+    img: [
+      {
+        src: "assets/photos/peanut-butter-paradise.png",
+        alt: "Peanut butter paradise donut.",
+      },
+    ],
+    count: 0,
+  },
+  {
+    id: 18,
+    name: "Strawberry Shortcake",
+    price: 15,
+    category: "Donuts",
+    rating: 4,
+    img: [
+      {
+        src: "assets/photos/Strawberry-Shortcake.png",
+        alt: "Strawberry shortcake donut.",
       },
     ],
     count: 0,
