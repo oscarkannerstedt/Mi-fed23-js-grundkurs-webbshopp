@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "S`Mores",
     price: 20,
-    category: "Donuts",
+    category: "Deluxe",
     rating: 5,
     img: [
       {
@@ -17,7 +17,7 @@ const products = [
     id: 2,
     name: "Bacon in the Sun",
     price: 10,
-    category: "Donuts",
+    category: "Speciell",
     rating: 4,
     img: [
       {
@@ -31,7 +31,7 @@ const products = [
     id: 3,
     name: "Blueberry Lemonade",
     price: 15,
-    category: "Donuts",
+    category: "Speciell",
     rating: 3,
     img: [
       {
@@ -45,7 +45,7 @@ const products = [
     id: 4,
     name: "Beach Ball",
     price: 10,
-    category: "Donuts",
+    category: "Standard",
     rating: 3,
     img: [
       {
@@ -59,7 +59,7 @@ const products = [
     id: 5,
     name: "Blueberry Pancake",
     price: 15,
-    category: "Donuts",
+    category: "Deluxe",
     rating: 4,
     img: [
       {
@@ -73,7 +73,7 @@ const products = [
     id: 6,
     name: "Cinnamon Bun",
     price: 20,
-    category: "Donuts",
+    category: "Deluxe",
     rating: 5,
     img: [
       {
@@ -87,7 +87,7 @@ const products = [
     id: 7,
     name: "Chocolate Explosion",
     price: 15,
-    category: "Donuts",
+    category: "Speciell",
     rating: 4,
     img: [
       {
@@ -101,7 +101,7 @@ const products = [
     id: 8,
     name: "Chocolate Caramel Crunch",
     price: 10,
-    category: "Donuts",
+    category: "Standard",
     rating: 3,
     img: [
       {
@@ -115,7 +115,7 @@ const products = [
     id: 9,
     name: "Cookies & Cream",
     price: 10,
-    category: "Donuts",
+    category: "Standard",
     rating: 4,
     img: [
       {
@@ -129,7 +129,7 @@ const products = [
     id: 10,
     name: "French Toast",
     price: 15,
-    category: "Donuts",
+    category: "Speciell",
     rating: 4,
     img: [
       {
@@ -143,7 +143,7 @@ const products = [
     id: 11,
     name: "Strawberry Confetti",
     price: 15,
-    category: "Donuts",
+    category: "Deluxe",
     rating: 5,
     img: [
       {
@@ -157,7 +157,7 @@ const products = [
     id: 12,
     name: "Coconut Island Blis",
     price: 10,
-    category: "Donuts",
+    category: "Standard",
     rating: 3,
     img: [
       {
@@ -171,7 +171,7 @@ const products = [
     id: 13,
     name: "Midnight Madness",
     price: 20,
-    category: "Donuts",
+    category: "Deluxe",
     rating: 5,
     img: [
       {
@@ -185,7 +185,7 @@ const products = [
     id: 14,
     name: "The Flip Flop",
     price: 10,
-    category: "Donuts",
+    category: "Standard",
     rating: 3,
     img: [
       {
@@ -199,7 +199,7 @@ const products = [
     id: 15,
     name: "Sunrise",
     price: 15,
-    category: "Donuts",
+    category: "Speciell",
     rating: 4,
     img: [
       {
@@ -213,7 +213,7 @@ const products = [
     id: 16,
     name: "Peanut Butter & Jelly",
     price: 20,
-    category: "Donuts",
+    category: "Deluxe",
     rating: 5,
     img: [
       {
@@ -227,7 +227,7 @@ const products = [
     id: 17,
     name: "Peanut Butter Paradise",
     price: 20,
-    category: "Donuts",
+    category: "Deluxe",
     rating: 5,
     img: [
       {
@@ -241,7 +241,7 @@ const products = [
     id: 18,
     name: "Strawberry Shortcake",
     price: 15,
-    category: "Donuts",
+    category: "Speciell",
     rating: 4,
     img: [
       {
@@ -261,6 +261,10 @@ const donutsContainer = document.querySelector(".donutsWrapper");
 
 function printProducts() {
   let donutsArray = [...products];
+
+  donutsArray = filterCategories(donutsArray);
+  sortDonuts(donutsArray);
+
   donutsContainer.innerHTML = "";
 
   let rendered = 0;
@@ -305,26 +309,82 @@ function printProducts() {
     `;
     rendered++;
   }
+  applyListeners();
 }
 printProducts();
 
-const addBtn = document.querySelectorAll('button[data-operator="add"]');
-const subtractBtn = document.querySelectorAll(
-  'button[data-operator="subtract"]'
-);
-const addToCartBtn = document.querySelectorAll(
-  'button[data-operator="addToCart"]'
-);
 
-for (let i = 0; i < addBtn.length; i++) {
-  addBtn[i].addEventListener("click", increaseAmount);
-  subtractBtn[i].addEventListener("click", decreaseAmount);
-  addToCartBtn[i].addEventListener("click", addToCart);
+/*---------------------------------------------*/
+/*----------------Sort Donuts-----------------*/
+/*---------------------------------------------*/
+
+const sortOptions = document.querySelector('#sortOptions');
+sortOptions.addEventListener('change', printProducts);
+
+function sortDonuts(donutsArray) {
+  const sortRating = document.querySelector('#sortRating');
+  const sortPriceLow = document.querySelector('#sortPriceLow');
+  const sortPriceHigh = document.querySelector('#sortPriceHigh');
+
+  if(sortRating.selected) {
+    donutsArray.sort((donut1, donut2) => donut2.rating - donut1.rating);
+  }
+
+  if (sortPriceLow.selected) {
+    donutsArray.sort((donut1, donut2) => donut1.price - donut2.price);
+  }
+
+  if (sortPriceHigh.selected) {
+    donutArray.sort((donut1, donut2) => donut2.price - donut1.price);
+  }
+
+}
+
+/*---------------------------------------------*/
+/*---------Filter donuts by category----------*/
+/*---------------------------------------------*/
+
+const sortCategory = document.querySelector('#sortCategories');
+sortCategory.addEventListener('change', printProducts);
+
+function filterCategories(donutsArray) {
+  const categoryStandard = document.querySelector('#categoryStandard');
+  const categorySpecial = document.querySelector('#categorySpecial');
+  const categoryDeluxe = document.querySelector('#categoryDeluxe');
+  
+  if(categoryStandard.selected) {
+    donutsArray = donutsArray.filter(donut => donut.category === 'Standard')
+  }
+
+  if(categorySpecial.selected) {
+    donutsArray = donutsArray.filter(donut => donut.category === 'Speciell')
+  }
+
+  if(categoryDeluxe.selected) {
+    donutsArray = donutsArray.filter(donut => donut.category === 'Deluxe')
+  }
+  return donutsArray;
 }
 
 /*---------------------------------------------*/
 /*------plus & minus för att välja antal------*/
 /*---------------------------------------------*/
+
+function applyListeners() {
+  const addBtn = document.querySelectorAll('button[data-operator="add"]');
+  const subtractBtn = document.querySelectorAll(
+    'button[data-operator="subtract"]'
+  );
+  const addToCartBtn = document.querySelectorAll(
+    'button[data-operator="addToCart"]'
+  );
+
+  for (let i = 0; i < addBtn.length; i++) {
+    addBtn[i].addEventListener("click", increaseAmount);
+    subtractBtn[i].addEventListener("click", decreaseAmount);
+    addToCartBtn[i].addEventListener("click", addToCart);
+  }
+}
 
 function increaseAmount(evt) {
   const index = evt.currentTarget.id.replace("add", "");
