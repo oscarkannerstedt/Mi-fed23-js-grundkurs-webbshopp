@@ -253,7 +253,6 @@ const products = [
   },
 ];
 
-
 /*---------------------------------------------*/
 /*---------Printar ut alla produkter----------*/
 /*---------------------------------------------*/
@@ -267,20 +266,41 @@ function printProducts() {
   let rendered = 0;
 
   for (let i = 0; i < donutsArray.length; i++) {
+
+    let stars = '';
+    for (let j = 0; j < 5; j++) {
+      if (j - donutsArray[i].rating < -0.5) {
+        stars += '&#xf005';
+      } else if (j - donutsArray[i].rating == -0.5) {
+        stars += '&#xf123';
+      } else {
+        stars += '&#xf006;';
+      }
+    }
+
     donutsContainer.innerHTML += `
     <article class="donuts${rendered + 1}" id="${donutsArray[i].id}">
     <div class="images">
-        <img src="${donutsArray[i].img[0].src}" alt="${donutsArray[i].img[0].alt}" width="160" loading="lazy">
+        <img src="${donutsArray[i].img[0].src}" alt="${
+      donutsArray[i].img[0].alt
+    }" width="160" loading="lazy">
     </div>
     <h3 class="donutTitle">${donutsArray[i].name}</h3>
+    <span class="donutRating fa">${stars}</span>
     <span class="donutPrice">Pris ${donutsArray[i].price}:-</span>
     <div id="productsCount" class="productsCount">
-        <button id="subtract${rendered + 1}" class="subtractBtn" data-operator="subtract">-</button>
+        <button id="subtract${
+          rendered + 1
+        }" class="subtractBtn" data-operator="subtract">-</button>
         <span class="countText">Antal:</span>
         <span id="amount${rendered + 1}" class="amountValue">0</span>
-        <button id="add${rendered + 1}" class="addBtn" data-operator="add">+</button><br>
+        <button id="add${
+          rendered + 1
+        }" class="addBtn" data-operator="add">+</button><br>
     </div>
-    <button id="addToCart${rendered + 1}" class="addToCartBtn" data-operator="addToCart">Lägg till</button>
+    <button id="addToCart${
+      rendered + 1
+    }" class="addToCartBtn" data-operator="addToCart">Lägg till</button>
     </article>
     `;
     rendered++;
@@ -289,37 +309,40 @@ function printProducts() {
 printProducts();
 
 const addBtn = document.querySelectorAll('button[data-operator="add"]');
-const subtractBtn = document.querySelectorAll('button[data-operator="subtract"]');
-const addToCartBtn = document.querySelectorAll('button[data-operator="addToCart"]');
+const subtractBtn = document.querySelectorAll(
+  'button[data-operator="subtract"]'
+);
+const addToCartBtn = document.querySelectorAll(
+  'button[data-operator="addToCart"]'
+);
 
-
-  for (let i = 0; i < addBtn.length; i++) {
-    addBtn[i].addEventListener('click', increaseAmount);
-    subtractBtn[i].addEventListener('click', decreaseAmount);
-    addToCartBtn[i].addEventListener('click', addToCart);
-  }
+for (let i = 0; i < addBtn.length; i++) {
+  addBtn[i].addEventListener("click", increaseAmount);
+  subtractBtn[i].addEventListener("click", decreaseAmount);
+  addToCartBtn[i].addEventListener("click", addToCart);
+}
 
 /*---------------------------------------------*/
 /*------plus & minus för att välja antal------*/
 /*---------------------------------------------*/
 
-  function increaseAmount(evt) {
-    const index = evt.currentTarget.id.replace('add', '');
-    const startAmount = document.querySelector(`#amount${index}`);
-    let amountValue = Number(startAmount.innerText);
-    startAmount.innerHTML = amountValue + 1;
-  }
+function increaseAmount(evt) {
+  const index = evt.currentTarget.id.replace("add", "");
+  const startAmount = document.querySelector(`#amount${index}`);
+  let amountValue = Number(startAmount.innerText);
+  startAmount.innerHTML = amountValue + 1;
+}
 
-  function decreaseAmount(evt) {
-    const index = evt.currentTarget.id.replace('subtract', '');
-    const startAmount = document.querySelector(`#amount${index}`);
-    let amountValue = Number(startAmount.innerText);
-    if(amountValue - 1 < 0) {
-      return;
-    } else {
-      startAmount.innerHTML = amountValue - 1;
-    }
+function decreaseAmount(evt) {
+  const index = evt.currentTarget.id.replace("subtract", "");
+  const startAmount = document.querySelector(`#amount${index}`);
+  let amountValue = Number(startAmount.innerText);
+  if (amountValue - 1 < 0) {
+    return;
+  } else {
+    startAmount.innerHTML = amountValue - 1;
   }
+}
 
 /*---------------------------------------------*/
 /*-----------lägg till i varukorgen-----------*/
@@ -328,36 +351,38 @@ const addToCartBtn = document.querySelectorAll('button[data-operator="addToCart"
 function addToCart(evt) {
   let cartBtn = evt.target;
   const productItem = cartBtn.parentElement;
-  const cartAmount = productItem.getElementsByClassName('productsCount')[0].getElementsByClassName('amountValue')[0];
+  const cartAmount = productItem
+    .getElementsByClassName("productsCount")[0]
+    .getElementsByClassName("amountValue")[0];
   const amountToAdd = parseInt(cartAmount.innerHTML);
 
-  if(amountToAdd <= 0) {
+  if (amountToAdd <= 0) {
     return;
   }
 
-  const donutsToAdd = products.find(donut => donut.id == productItem.id);
+  const donutsToAdd = products.find((donut) => donut.id == productItem.id);
   donutsToAdd.count = amountToAdd;
 
   console.log(donutsToAdd);
   console.log(amountToAdd);
   printShoppingCart();
-  }
+}
 
 /*---------------------------------------------*/
 /*skriv ut varukorgen om det finns varor i den*/
 /*---------------------------------------------*/
 
 function printShoppingCart() {
-  const shoppingCartItems = document.querySelector('#shoppingCartItems');
+  const shoppingCartItems = document.querySelector("#shoppingCartItems");
   shoppingCartItems.innerHTML = "";
 
-  for(let i = 0; i < products.length; i++) {
-    if(products[i].count == 0) {
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].count == 0) {
       continue;
     }
 
     let price;
-    if(products[i].count >= 10) {
+    if (products[i].count >= 10) {
       price = products[i].price * 0.9;
     } else {
       price = products[i].price;
@@ -385,20 +410,20 @@ function printShoppingCart() {
     `;
   }
 
-  const removeProductBtn = document.getElementsByClassName('btnRemoveItem');
+  const removeProductBtn = document.getElementsByClassName("btnRemoveItem");
   for (let i = 0; i < removeProductBtn.length; i++) {
     let removeBtn = removeProductBtn[i];
-    removeBtn.addEventListener('click', removeProduct);
+    removeBtn.addEventListener("click", removeProduct);
   }
 
-  const quantityInput = document.getElementsByClassName('cartProductCount');
+  const quantityInput = document.getElementsByClassName("cartProductCount");
   for (let i = 0; i < quantityInput.length; i++) {
     const input = quantityInput[i];
-    input.addEventListener('change', quantityInputChanged);
+    input.addEventListener("change", quantityInputChanged);
   }
 
-  const discountInput = document.getElementById('discount');
-  discountInput.addEventListener('change', giveDiscount);
+  const discountInput = document.getElementById("discount");
+  discountInput.addEventListener("change", giveDiscount);
 
   updateTotalPrice();
   giveMondayDiscount();
@@ -409,10 +434,10 @@ function printShoppingCart() {
 /*-----Function for order & order button------*/
 /*---------------------------------------------*/
 
-document.querySelector('#goToForm').addEventListener('click', goToForm);
+document.querySelector("#goToForm").addEventListener("click", goToForm);
 
 function goToForm() {
-  let scroll = document.getElementById('scroll');
+  let scroll = document.getElementById("scroll");
   scroll.scrollIntoView();
 }
 
@@ -422,8 +447,8 @@ function goToForm() {
 
 function removeProduct(evt) {
   let removeBtnClicked = evt.target;
-  for(let i = 0; i < products.length; i++) {
-    if(removeBtnClicked.id == products[i].id) {
+  for (let i = 0; i < products.length; i++) {
+    if (removeBtnClicked.id == products[i].id) {
       products[i].count = 0;
     }
   }
@@ -436,12 +461,12 @@ function removeProduct(evt) {
 
 function quantityInputChanged(evt) {
   const input = evt.target;
-  if(isNaN(input.value) || input.value <= 0) {
+  if (isNaN(input.value) || input.value <= 0) {
     input.value = 1;
   }
 
-  for(let i = 0; i < products.length; i++) {
-    if(input.id == products[i].id) {
+  for (let i = 0; i < products.length; i++) {
+    if (input.id == products[i].id) {
       products[i].count = input.value;
     }
   }
@@ -458,7 +483,7 @@ function updateTotalPrice() {
   let total = 0;
   let totalQuantity = 0;
 
-  for(let i = 0; i < cartRows.length; i++) {
+  for (let i = 0; i < cartRows.length; i++) {
     const row = cartRows[i];
     const productPrice = row.getElementsByClassName("cartProductPrice")[0];
     const productQuantity = row.getElementsByClassName("cartProductCount")[0];
@@ -471,20 +496,19 @@ function updateTotalPrice() {
   }
 
   // Number of items in shopping cart showed in header
-    const headerCountItems = document.querySelector('#headerCountItems');
-    headerCountItems.innerText = totalQuantity;
-    if(headerCountItems.innerHTML.trim() !== '') {
-      headerCountItems.classList.add('pink-background');
-    }
-  
+  const headerCountItems = document.querySelector("#headerCountItems");
+  headerCountItems.innerText = totalQuantity;
+  if (headerCountItems.innerHTML.trim() !== "") {
+    headerCountItems.classList.add("pink-background");
+  }
 
-  const paymentInvoice = document.querySelector('#paymentInvoice');
-  const paymentCard = document.querySelector('#paymentCard');
+  const paymentInvoice = document.querySelector("#paymentInvoice");
+  const paymentCard = document.querySelector("#paymentCard");
 
-  if(total > 800) {
+  if (total > 800) {
     paymentInvoice.disabled = true;
     paymentCard.checked = true;
-    switchPayment('paymentCard');
+    switchPayment("paymentCard");
   } else {
     paymentInvoice.disabled = false;
   }
@@ -495,13 +519,16 @@ function updateTotalPrice() {
     shippingPrice = 0;
   }
 
-  document.querySelector('#cartShippingPrice').innerHTML = toDisplayPrice(shippingPrice);
-  document.querySelector('#cartTotalPrice').innerText = toDisplayPrice(total);
-  document.querySelector('#cartPaymentPrice').innerHTML = toDisplayPrice(total + shippingPrice);
+  document.querySelector("#cartShippingPrice").innerHTML =
+    toDisplayPrice(shippingPrice);
+  document.querySelector("#cartTotalPrice").innerText = toDisplayPrice(total);
+  document.querySelector("#cartPaymentPrice").innerHTML = toDisplayPrice(
+    total + shippingPrice
+  );
 }
 
 function toDisplayPrice(num) {
-  return (Math.round((num + Number.EPSILON) * 100) / 100).toFixed(2) + ':-';
+  return (Math.round((num + Number.EPSILON) * 100) / 100).toFixed(2) + ":-";
 }
 
 /*---------------------------------------------*/
@@ -513,26 +540,19 @@ function giveMondayDiscount() {}
 /*---------------------------------------------*/
 /*------------Discount code input-------------*/
 /*---------------------------------------------*/
-const discountInput = document.querySelector('#discount');
-discountInput.addEventListener('change', giveDiscount);
+const discountInput = document.querySelector("#discount");
+discountInput.addEventListener("change", giveDiscount);
 
 function giveDiscount() {
-  if(discountInput.value == 'TOMTEN') {
-    let newPrice = document.querySelector('#cartTotalPrice').innerHTML.replace(':-', '');
+  if (discountInput.value == "TOMTEN") {
+    let newPrice = document
+      .querySelector("#cartTotalPrice")
+      .innerHTML.replace(":-", "");
     newPrice = Number(newPrice * 0);
-    document.querySelector('#cartPaymentPrice').innerHTML = newPrice + ':-';
+    document.querySelector("#cartPaymentPrice").innerHTML = newPrice + ":-";
   } else {
     toDisplayPrice();
     updateTotalPrice();
     giveMondayDiscount();
   }
 }
-
-
-
-
-
-
-
-
-
