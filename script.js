@@ -322,20 +322,25 @@ const sortOptions = document.querySelector('#sortOptions');
 sortOptions.addEventListener('change', printProducts);
 
 function sortDonuts(donutsArray) {
+  const sortName = document.querySelector('#sortName')
   const sortRating = document.querySelector('#sortRating');
   const sortPriceLow = document.querySelector('#sortPriceLow');
   const sortPriceHigh = document.querySelector('#sortPriceHigh');
+
+  if (sortName.selected) {
+    donutsArray.sort((donut1, donut2) => donut1.name.localeCompare(donut2.name));
+  }
 
   if(sortRating.selected) {
     donutsArray.sort((donut1, donut2) => donut2.rating - donut1.rating);
   }
 
-  if (sortPriceLow.selected) {
+  if(sortPriceLow.selected) {
     donutsArray.sort((donut1, donut2) => donut1.price - donut2.price);
   }
 
-  if (sortPriceHigh.selected) {
-    donutArray.sort((donut1, donut2) => donut2.price - donut1.price);
+  if(sortPriceHigh.selected) {
+    donutsArray.sort((donut1, donut2) => donut2.price - donut1.price);
   }
 
 }
