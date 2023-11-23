@@ -1,252 +1,252 @@
 const products = [
   {
     id: 1,
-    name: "S`Mores",
+    name: 'S`Mores',
     price: 20,
-    category: "Deluxe",
+    category: 'Deluxe',
     rating: 5,
     img: [
       {
-        src: "assets/photos/s-mores.png",
-        alt: "S`Mores donut.",
+        src: 'assets/photos/s-mores.png',
+        alt: 'S`Mores donut.',
       },
     ],
     count: 0,
   },
   {
     id: 2,
-    name: "Bacon in the Sun",
+    name: 'Bacon in the Sun',
     price: 10,
-    category: "Speciell",
+    category: 'Speciell',
     rating: 4,
     img: [
       {
-        src: "assets/photos/bacon-in-the-sun.png",
-        alt: "Bacon in the sun donut.",
+        src: 'assets/photos/bacon-in-the-sun.png',
+        alt: 'Bacon in the sun donut.',
       },
     ],
     count: 0,
   },
   {
     id: 3,
-    name: "Blueberry Lemonade",
+    name: 'Blueberry Lemonade',
     price: 15,
-    category: "Speciell",
+    category: 'Speciell',
     rating: 3,
     img: [
       {
-        src: "assets/photos/Blueberry-Lemonade.jpg",
-        alt: "Blueberry lemonade donut.",
+        src: 'assets/photos/Blueberry-Lemonade.jpg',
+        alt: 'Blueberry lemonade donut.',
       },
     ],
     count: 0,
   },
   {
     id: 4,
-    name: "Beach Ball",
+    name: 'Beach Ball',
     price: 10,
-    category: "Standard",
+    category: 'Standard',
     rating: 3,
     img: [
       {
-        src: "assets/photos/beach-ball.png",
-        alt: "Beach ball donut.",
+        src: 'assets/photos/beach-ball.png',
+        alt: 'Beach ball donut.',
       },
     ],
     count: 0,
   },
   {
     id: 5,
-    name: "Blueberry Pancake",
+    name: 'Blueberry Pancake',
     price: 15,
-    category: "Deluxe",
+    category: 'Deluxe',
     rating: 4,
     img: [
       {
-        src: "assets/photos/blueberry-pancake.png",
-        alt: "Blueberry pancake donut.",
+        src: 'assets/photos/blueberry-pancake.png',
+        alt: 'Blueberry pancake donut.',
       },
     ],
     count: 0,
   },
   {
     id: 6,
-    name: "Cinnamon Bun",
+    name: 'Cinnamon Bun',
     price: 20,
-    category: "Deluxe",
+    category: 'Deluxe',
     rating: 5,
     img: [
       {
-        src: "assets/photos/cinnamon-bun.png",
-        alt: "Cinnamon bun donut.",
+        src: 'assets/photos/cinnamon-bun.png',
+        alt: 'Cinnamon bun donut.',
       },
     ],
     count: 0,
   },
   {
     id: 7,
-    name: "Chocolate Explosion",
+    name: 'Chocolate Explosion',
     price: 15,
-    category: "Speciell",
+    category: 'Speciell',
     rating: 4,
     img: [
       {
-        src: "assets/photos/Chocolate-Explosion.png",
-        alt: "Chocolate explosion donut.",
+        src: 'assets/photos/Chocolate-Explosion.png',
+        alt: 'Chocolate explosion donut.',
       },
     ],
     count: 0,
   },
   {
     id: 8,
-    name: "Chocolate Caramel Crunch",
+    name: 'Chocolate Caramel Crunch',
     price: 10,
-    category: "Standard",
+    category: 'Standard',
     rating: 3,
     img: [
       {
-        src: "assets/photos/chocolate-caramel-crunch.png",
-        alt: "Chocolate caramel crunch donut.",
+        src: 'assets/photos/chocolate-caramel-crunch.png',
+        alt: 'Chocolate caramel crunch donut.',
       },
     ],
     count: 0,
   },
   {
     id: 9,
-    name: "Cookies & Cream",
+    name: 'Cookies & Cream',
     price: 10,
-    category: "Standard",
+    category: 'Standard',
     rating: 4,
     img: [
       {
-        src: "assets/photos/cookies&cream.png",
-        alt: "Cookies & cream donut.",
+        src: 'assets/photos/cookies&cream.png',
+        alt: 'Cookies & cream donut.',
       },
     ],
     count: 0,
   },
   {
     id: 10,
-    name: "French Toast",
+    name: 'French Toast',
     price: 15,
-    category: "Speciell",
+    category: 'Speciell',
     rating: 4,
     img: [
       {
-        src: "assets/photos/french-toast.png",
-        alt: "French toast donut.",
+        src: 'assets/photos/french-toast.png',
+        alt: 'French toast donut.',
       },
     ],
     count: 0,
   },
   {
     id: 11,
-    name: "Strawberry Confetti",
+    name: 'Strawberry Confetti',
     price: 15,
-    category: "Deluxe",
+    category: 'Deluxe',
     rating: 5,
     img: [
       {
-        src: "assets/photos/Strawberry-Confetti.png",
-        alt: "Strawberry confetti donut.",
+        src: 'assets/photos/Strawberry-Confetti.png',
+        alt: 'Strawberry confetti donut.',
       },
     ],
     count: 0,
   },
   {
     id: 12,
-    name: "Coconut Island Blis",
+    name: 'Coconut Island Blis',
     price: 10,
-    category: "Standard",
+    category: 'Standard',
     rating: 3,
     img: [
       {
-        src: "assets/photos/coconut-island-bliss.png",
-        alt: "Coconut island bliss donut.",
+        src: 'assets/photos/coconut-island-bliss.png',
+        alt: 'Coconut island bliss donut.',
       },
     ],
     count: 0,
   },
   {
     id: 13,
-    name: "Midnight Madness",
+    name: 'Midnight Madness',
     price: 20,
-    category: "Deluxe",
+    category: 'Deluxe',
     rating: 5,
     img: [
       {
-        src: "assets/photos/Midnight-Madness.png",
-        alt: "Midnight madness donut.",
+        src: 'assets/photos/Midnight-Madness.png',
+        alt: 'Midnight madness donut.',
       },
     ],
     count: 0,
   },
   {
     id: 14,
-    name: "The Flip Flop",
+    name: 'The Flip Flop',
     price: 10,
-    category: "Standard",
+    category: 'Standard',
     rating: 3,
     img: [
       {
-        src: "assets/photos/flip-flop.png",
-        alt: "Flip flop donut.",
+        src: 'assets/photos/flip-flop.png',
+        alt: 'Flip flop donut.',
       },
     ],
     count: 0,
   },
   {
     id: 15,
-    name: "Sunrise",
+    name: 'Sunrise',
     price: 15,
-    category: "Speciell",
+    category: 'Speciell',
     rating: 4,
     img: [
       {
-        src: "assets/photos/sunrise.png",
-        alt: "Sunrise donut.",
+        src: 'assets/photos/sunrise.png',
+        alt: 'Sunrise donut.',
       },
     ],
     count: 0,
   },
   {
     id: 16,
-    name: "Peanut Butter & Jelly",
+    name: 'Peanut Butter & Jelly',
     price: 20,
-    category: "Deluxe",
+    category: 'Deluxe',
     rating: 5,
     img: [
       {
-        src: "assets/photos/peanut-butter-jelly.png",
-        alt: "Peanut butter jelly donut.",
+        src: 'assets/photos/peanut-butter-jelly.png',
+        alt: 'Peanut butter jelly donut.',
       },
     ],
     count: 0,
   },
   {
     id: 17,
-    name: "Peanut Butter Paradise",
+    name: 'Peanut Butter Paradise',
     price: 20,
-    category: "Deluxe",
+    category: 'Deluxe',
     rating: 5,
     img: [
       {
-        src: "assets/photos/peanut-butter-paradise.png",
-        alt: "Peanut butter paradise donut.",
+        src: 'assets/photos/peanut-butter-paradise.png',
+        alt: 'Peanut butter paradise donut.',
       },
     ],
     count: 0,
   },
   {
     id: 18,
-    name: "Strawberry Shortcake",
+    name: 'Strawberry Shortcake',
     price: 15,
-    category: "Speciell",
+    category: 'Speciell',
     rating: 4,
     img: [
       {
-        src: "assets/photos/Strawberry-Shortcake.png",
-        alt: "Strawberry shortcake donut.",
+        src: 'assets/photos/Strawberry-Shortcake.png',
+        alt: 'Strawberry shortcake donut.',
       },
     ],
     count: 0,
@@ -257,7 +257,7 @@ const products = [
 /*---------Printar ut alla produkter----------*/
 /*---------------------------------------------*/
 
-const donutsContainer = document.querySelector(".donutsWrapper");
+const donutsContainer = document.querySelector('.donutsWrapper');
 
 function printProducts() {
   let donutsArray = [...products];
@@ -265,12 +265,11 @@ function printProducts() {
   donutsArray = filterCategories(donutsArray);
   sortDonuts(donutsArray);
 
-  donutsContainer.innerHTML = "";
+  donutsContainer.innerHTML = '';
 
   let rendered = 0;
 
   for (let i = 0; i < donutsArray.length; i++) {
-
     let stars = '';
     for (let j = 0; j < 5; j++) {
       if (j - donutsArray[i].rating < -0.5) {
@@ -313,7 +312,6 @@ function printProducts() {
 }
 printProducts();
 
-
 /*---------------------------------------------*/
 /*----------------Sort Donuts-----------------*/
 /*---------------------------------------------*/
@@ -322,27 +320,28 @@ const sortOptions = document.querySelector('#sortOptions');
 sortOptions.addEventListener('change', printProducts);
 
 function sortDonuts(donutsArray) {
-  const sortName = document.querySelector('#sortName')
+  const sortName = document.querySelector('#sortName');
   const sortRating = document.querySelector('#sortRating');
   const sortPriceLow = document.querySelector('#sortPriceLow');
   const sortPriceHigh = document.querySelector('#sortPriceHigh');
 
   if (sortName.selected) {
-    donutsArray.sort((donut1, donut2) => donut1.name.localeCompare(donut2.name));
+    donutsArray.sort((donut1, donut2) =>
+      donut1.name.localeCompare(donut2.name)
+    );
   }
 
-  if(sortRating.selected) {
+  if (sortRating.selected) {
     donutsArray.sort((donut1, donut2) => donut2.rating - donut1.rating);
   }
 
-  if(sortPriceLow.selected) {
+  if (sortPriceLow.selected) {
     donutsArray.sort((donut1, donut2) => donut1.price - donut2.price);
   }
 
-  if(sortPriceHigh.selected) {
+  if (sortPriceHigh.selected) {
     donutsArray.sort((donut1, donut2) => donut2.price - donut1.price);
   }
-
 }
 
 /*---------------------------------------------*/
@@ -356,17 +355,17 @@ function filterCategories(donutsArray) {
   const categoryStandard = document.querySelector('#categoryStandard');
   const categorySpecial = document.querySelector('#categorySpecial');
   const categoryDeluxe = document.querySelector('#categoryDeluxe');
-  
-  if(categoryStandard.selected) {
-    donutsArray = donutsArray.filter(donut => donut.category === 'Standard')
+
+  if (categoryStandard.selected) {
+    donutsArray = donutsArray.filter((donut) => donut.category === 'Standard');
   }
 
-  if(categorySpecial.selected) {
-    donutsArray = donutsArray.filter(donut => donut.category === 'Speciell')
+  if (categorySpecial.selected) {
+    donutsArray = donutsArray.filter((donut) => donut.category === 'Speciell');
   }
 
-  if(categoryDeluxe.selected) {
-    donutsArray = donutsArray.filter(donut => donut.category === 'Deluxe')
+  if (categoryDeluxe.selected) {
+    donutsArray = donutsArray.filter((donut) => donut.category === 'Deluxe');
   }
   return donutsArray;
 }
@@ -385,21 +384,21 @@ function applyListeners() {
   );
 
   for (let i = 0; i < addBtn.length; i++) {
-    addBtn[i].addEventListener("click", increaseAmount);
-    subtractBtn[i].addEventListener("click", decreaseAmount);
-    addToCartBtn[i].addEventListener("click", addToCart);
+    addBtn[i].addEventListener('click', increaseAmount);
+    subtractBtn[i].addEventListener('click', decreaseAmount);
+    addToCartBtn[i].addEventListener('click', addToCart);
   }
 }
 
 function increaseAmount(evt) {
-  const index = evt.currentTarget.id.replace("add", "");
+  const index = evt.currentTarget.id.replace('add', '');
   const startAmount = document.querySelector(`#amount${index}`);
   let amountValue = Number(startAmount.innerText);
   startAmount.innerHTML = amountValue + 1;
 }
 
 function decreaseAmount(evt) {
-  const index = evt.currentTarget.id.replace("subtract", "");
+  const index = evt.currentTarget.id.replace('subtract', '');
   const startAmount = document.querySelector(`#amount${index}`);
   let amountValue = Number(startAmount.innerText);
   if (amountValue - 1 < 0) {
@@ -417,8 +416,8 @@ function addToCart(evt) {
   let cartBtn = evt.target;
   const productItem = cartBtn.parentElement;
   const cartAmount = productItem
-    .getElementsByClassName("productsCount")[0]
-    .getElementsByClassName("amountValue")[0];
+    .getElementsByClassName('productsCount')[0]
+    .getElementsByClassName('amountValue')[0];
   const amountToAdd = parseInt(cartAmount.innerHTML);
 
   if (amountToAdd <= 0) {
@@ -438,8 +437,8 @@ function addToCart(evt) {
 /*---------------------------------------------*/
 
 function printShoppingCart() {
-  const shoppingCartItems = document.querySelector("#shoppingCartItems");
-  shoppingCartItems.innerHTML = "";
+  const shoppingCartItems = document.querySelector('#shoppingCartItems');
+  shoppingCartItems.innerHTML = '';
 
   for (let i = 0; i < products.length; i++) {
     if (products[i].count == 0) {
@@ -475,20 +474,20 @@ function printShoppingCart() {
     `;
   }
 
-  const removeProductBtn = document.getElementsByClassName("btnRemoveItem");
+  const removeProductBtn = document.getElementsByClassName('btnRemoveItem');
   for (let i = 0; i < removeProductBtn.length; i++) {
     let removeBtn = removeProductBtn[i];
-    removeBtn.addEventListener("click", removeProduct);
+    removeBtn.addEventListener('click', removeProduct);
   }
 
-  const quantityInput = document.getElementsByClassName("cartProductCount");
+  const quantityInput = document.getElementsByClassName('cartProductCount');
   for (let i = 0; i < quantityInput.length; i++) {
     const input = quantityInput[i];
-    input.addEventListener("change", quantityInputChanged);
+    input.addEventListener('change', quantityInputChanged);
   }
 
-  const discountInput = document.getElementById("discount");
-  discountInput.addEventListener("change", giveDiscount);
+  const discountInput = document.getElementById('discount');
+  discountInput.addEventListener('change', giveDiscount);
 
   updateTotalPrice();
   giveMondayDiscount();
@@ -499,10 +498,10 @@ function printShoppingCart() {
 /*-----Function for order & order button------*/
 /*---------------------------------------------*/
 
-document.querySelector("#goToForm").addEventListener("click", goToForm);
+document.querySelector('#goToForm').addEventListener('click', goToForm);
 
 function goToForm() {
-  let scroll = document.getElementById("scroll");
+  let scroll = document.getElementById('scroll');
   scroll.scrollIntoView();
 }
 
@@ -543,15 +542,15 @@ function quantityInputChanged(evt) {
 /*---------------------------------------------*/
 
 function updateTotalPrice() {
-  const checkoutCart = document.getElementsByClassName("shoppingCartItems")[0];
-  const cartRows = checkoutCart.getElementsByClassName("shoppingCartItemsRow");
+  const checkoutCart = document.getElementsByClassName('shoppingCartItems')[0];
+  const cartRows = checkoutCart.getElementsByClassName('shoppingCartItemsRow');
   let total = 0;
   let totalQuantity = 0;
 
   for (let i = 0; i < cartRows.length; i++) {
     const row = cartRows[i];
-    const productPrice = row.getElementsByClassName("cartProductPrice")[0];
-    const productQuantity = row.getElementsByClassName("cartProductCount")[0];
+    const productPrice = row.getElementsByClassName('cartProductPrice')[0];
+    const productQuantity = row.getElementsByClassName('cartProductCount')[0];
 
     const price = Number(productPrice.innerText);
     const quantity = Number(productQuantity.value);
@@ -561,19 +560,19 @@ function updateTotalPrice() {
   }
 
   // Number of items in shopping cart showed in header
-  const headerCountItems = document.querySelector("#headerCountItems");
+  const headerCountItems = document.querySelector('#headerCountItems');
   headerCountItems.innerText = totalQuantity;
-  if (headerCountItems.innerHTML.trim() !== "") {
-    headerCountItems.classList.add("pink-background");
+  if (headerCountItems.innerHTML.trim() !== '') {
+    headerCountItems.classList.add('pink-background');
   }
 
-  const paymentInvoice = document.querySelector("#paymentInvoice");
-  const paymentCard = document.querySelector("#paymentCard");
+  const paymentInvoice = document.querySelector('#paymentInvoice');
+  const paymentCard = document.querySelector('#paymentCard');
 
   if (total > 800) {
     paymentInvoice.disabled = true;
     paymentCard.checked = true;
-    switchPayment("paymentCard");
+    switchPayment('paymentCard');
   } else {
     paymentInvoice.disabled = false;
   }
@@ -584,16 +583,16 @@ function updateTotalPrice() {
     shippingPrice = 0;
   }
 
-  document.querySelector("#cartShippingPrice").innerHTML =
+  document.querySelector('#cartShippingPrice').innerHTML =
     toDisplayPrice(shippingPrice);
-  document.querySelector("#cartTotalPrice").innerText = toDisplayPrice(total);
-  document.querySelector("#cartPaymentPrice").innerHTML = toDisplayPrice(
+  document.querySelector('#cartTotalPrice').innerText = toDisplayPrice(total);
+  document.querySelector('#cartPaymentPrice').innerHTML = toDisplayPrice(
     total + shippingPrice
   );
 }
 
 function toDisplayPrice(num) {
-  return (Math.round((num + Number.EPSILON) * 100) / 100).toFixed(2) + ":-";
+  return (Math.round((num + Number.EPSILON) * 100) / 100).toFixed(2) + ':-';
 }
 
 /*---------------------------------------------*/
@@ -605,19 +604,52 @@ function giveMondayDiscount() {}
 /*---------------------------------------------*/
 /*------------Discount code input-------------*/
 /*---------------------------------------------*/
-const discountInput = document.querySelector("#discount");
-discountInput.addEventListener("change", giveDiscount);
+const discountInput = document.querySelector('#discount');
+discountInput.addEventListener('change', giveDiscount);
 
 function giveDiscount() {
-  if (discountInput.value == "TOMTEN") {
+  if (discountInput.value == 'TOMTEN') {
     let newPrice = document
-      .querySelector("#cartTotalPrice")
-      .innerHTML.replace(":-", "");
+      .querySelector('#cartTotalPrice')
+      .innerHTML.replace(':-', '');
     newPrice = Number(newPrice * 0);
-    document.querySelector("#cartPaymentPrice").innerHTML = newPrice + ":-";
+    document.querySelector('#cartPaymentPrice').innerHTML = newPrice + ':-';
   } else {
     toDisplayPrice();
     updateTotalPrice();
     giveMondayDiscount();
+  }
+}
+
+/*---------------------------------------------*/
+/*-------Toggle between card & invoice--------*/
+/*---------------------------------------------*/
+
+const paymentCardInput = document.querySelector('#paymentCard');
+const paymentCardBox = document.querySelector('.hiddenPaymentCard');
+const paymentInvoiceInput = document.querySelector('#paymentInvoice');
+const paymentInvoiceBox = document.querySelector('.hiddenPaymentInvoice');
+
+paymentCardInput.addEventListener('change', switchPaymentEventHandler);
+paymentInvoiceInput.addEventListener('change', switchPaymentEventHandler);
+
+function switchPaymentEventHandler(e) {
+  switchPayment(e.target.id);
+}
+
+function switchPayment(paymentType) {
+  if(paymentType == 'paymentCard') {
+    paymentInvoiceBox.classList.remove('showPaymentInvoice');
+    paymentInvoiceBox.classList.add('hiddenPaymentInvoice');
+
+    paymentCardBox.classList.remove('hiddenPaymentCard');
+    paymentCardBox.classList.add('showPaymentCard');
+  }
+  if(paymentType == 'paymentInvoice') {
+    paymentCardBox.classList.remove('showPaymentCard');
+    paymentCardBox.classList.add('hiddenPaymentCard');
+
+    paymentInvoiceBox.classList.remove('hiddenPaymentInvoice');
+    paymentInvoiceBox.classList.add('showPaymentInvoice');
   }
 }
