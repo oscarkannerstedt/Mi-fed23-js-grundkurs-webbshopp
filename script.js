@@ -254,7 +254,30 @@ const products = [
 ];
 
 /*---------------------------------------------*/
-/*---------Printar ut alla produkter----------*/
+/*---------------Dates & Times----------------*/
+/*---------------------------------------------*/
+
+const now = new Date();
+
+const weekendPrices = (now.getDay() === 5 && now.getHours() > 15) || now.getDay() === 6 || now.getDay() === 0 || (now.getDay() === 1 && now.getHours() < 3);
+const mondayDiscount = now.getDay() === 1 && now.getHours() < 10;
+
+/*-----------------------------------------------------*/
+/*Weekend prices 15% more friday 15.00 to monday 03.00*/
+/*-----------------------------------------------------*/
+
+if (weekendPrices) {
+  products = products.map(donut => {
+    donut.price = Math.round(donut.price * 1.15);
+    return duck;
+  });
+}
+
+updateTotalPrice();
+giveMondayDiscount();
+
+/*---------------------------------------------*/
+/*----------Prints products to HTML-----------*/
 /*---------------------------------------------*/
 
 const donutsContainer = document.querySelector('.donutsWrapper');
@@ -371,7 +394,7 @@ function filterCategories(donutsArray) {
 }
 
 /*---------------------------------------------*/
-/*------plus & minus för att välja antal------*/
+/*------------add & subtract amount-----------*/
 /*---------------------------------------------*/
 
 function applyListeners() {
@@ -409,7 +432,7 @@ function decreaseAmount(evt) {
 }
 
 /*---------------------------------------------*/
-/*-----------lägg till i varukorgen-----------*/
+/*------------add article to cart-------------*/
 /*---------------------------------------------*/
 
 function addToCart(evt) {
@@ -433,7 +456,7 @@ function addToCart(evt) {
 }
 
 /*---------------------------------------------*/
-/*skriv ut varukorgen om det finns varor i den*/
+/*-------------Print shoppingCart-------------*/
 /*---------------------------------------------*/
 
 function printShoppingCart() {
@@ -599,7 +622,17 @@ function toDisplayPrice(num) {
 /*-----Monday discount 10% before 10.00-------*/
 /*---------------------------------------------*/
 
-function giveMondayDiscount() {}
+function giveMondayDiscount() {
+  if(mondayDiscount) {
+    const msgToUser = 'Måndagsrabatt: 10 % på hela beställningen';
+    document.querySelector('#msgToUser').innerText = msgToUser;
+
+    let mondayPrice = document.querySelector('#cartTotalPrice').innerHTML.replace(':-', '');
+
+    mondayPrice = Number(mondayPrice * 0.9);
+    document.querySelector('#cartTotalPrice').innerHTML = mondayPrice + ':-';
+  }
+}
 
 /*---------------------------------------------*/
 /*------------Discount code input-------------*/
