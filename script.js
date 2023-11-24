@@ -273,7 +273,7 @@ if (weekendPrices) {
   });
 }
 
-updateTotalPrice();
+// updateTotalPrice();
 giveMondayDiscount();
 
 /*---------------------------------------------*/
@@ -678,6 +678,7 @@ function switchPayment(paymentType) {
     paymentCardBox.classList.remove('hiddenPaymentCard');
     paymentCardBox.classList.add('showPaymentCard');
   }
+
   if(paymentType == 'paymentInvoice') {
     paymentCardBox.classList.remove('showPaymentCard');
     paymentCardBox.classList.add('hiddenPaymentCard');
@@ -685,4 +686,31 @@ function switchPayment(paymentType) {
     paymentInvoiceBox.classList.remove('hiddenPaymentInvoice');
     paymentInvoiceBox.classList.add('showPaymentInvoice');
   }
+}
+
+/*---------------------------------------------*/
+/*--------Clear form after 15 minutes---------*/
+/*---------------------------------------------*/
+
+function resetForm() {
+  document.querySelector('.checkoutForm').reset();
+  alert('Nu tog det lite lång tid... Om du vill beställa får du fylla i formuläret igen.');
+}
+
+setTimeout(resetForm, 1000 * 60 * 15);
+
+/*---------------------------------------------*/
+/*------------Delete order button-------------*/
+/*---------------------------------------------*/
+
+const clearOrderBtn = document.querySelector('#clearOrder');
+clearOrderBtn.addEventListener('click', clearOrder);
+
+function clearOrder() {
+  document.querySelector('.checkoutForm').reset();
+  for (let i = 0; i < products.length; i++) {
+    products[i].count = 0;
+  }
+  printShoppingCart();
+  printProducts();
 }
