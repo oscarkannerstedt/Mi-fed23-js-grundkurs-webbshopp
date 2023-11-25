@@ -279,6 +279,10 @@ header {
   font-size: 0.8rem;
 }
 
+.redFrame {
+  background-color: rgb(230, 29, 29);
+}
+
 /*-------------------------------------*/
 /*-------------Payment Form-----------*/
 /*-------------------------------------*/
@@ -350,7 +354,7 @@ header {
   }
 }
 
-#orderButton {
+.orderButton {
   padding: 15px 0px;
   margin-top: 20px;
   color: white;
@@ -360,7 +364,11 @@ header {
   cursor: pointer;
 }
 
-#clearOrder {
+.orderButton:disabled {
+  background-color: grey;
+}
+
+.clearOrder {
   width: 150px;
   padding: 15px 0px;
   margin-left: 20px;

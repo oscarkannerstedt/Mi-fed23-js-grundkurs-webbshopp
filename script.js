@@ -1,4 +1,4 @@
-const products = [
+let products = [
   {
     id: 1,
     name: 'S`Mores',
@@ -259,7 +259,11 @@ const products = [
 
 const now = new Date();
 
-const weekendPrices = (now.getDay() === 5 && now.getHours() > 15) || now.getDay() === 6 || now.getDay() === 0 || (now.getDay() === 1 && now.getHours() < 3);
+const weekendPrices =
+  (now.getDay() === 5 && now.getHours() > 15) ||
+  now.getDay() === 6 ||
+  now.getDay() === 0 ||
+  (now.getDay() === 1 && now.getHours() < 3);
 const mondayDiscount = now.getDay() === 1 && now.getHours() < 10;
 
 /*-----------------------------------------------------*/
@@ -267,9 +271,9 @@ const mondayDiscount = now.getDay() === 1 && now.getHours() < 10;
 /*-----------------------------------------------------*/
 
 if (weekendPrices) {
-  products = products.map(donut => {
+  products = products.map((donut) => {
     donut.price = Math.round(donut.price * 1.15);
-    return duck;
+    return donut;
   });
 }
 
@@ -515,6 +519,7 @@ function printShoppingCart() {
   updateTotalPrice();
   giveMondayDiscount();
   giveDiscount();
+  visualCartUpdate();
 }
 
 /*---------------------------------------------*/
@@ -589,6 +594,7 @@ function updateTotalPrice() {
     headerCountItems.classList.add('pink-background');
   }
 
+  // Total price over 800, Only card payment avaible
   const paymentInvoice = document.querySelector('#paymentInvoice');
   const paymentCard = document.querySelector('#paymentCard');
 
@@ -623,11 +629,13 @@ function toDisplayPrice(num) {
 /*---------------------------------------------*/
 
 function giveMondayDiscount() {
-  if(mondayDiscount) {
-    const msgToUser = 'Måndagsrabatt: 10 % på hela beställningen';
+  if (mondayDiscount) {
+    const msgToUser = 'Det är måndag morgon, så du får 10 % rabatt på din beställning';
     document.querySelector('#msgToUser').innerText = msgToUser;
 
-    let mondayPrice = document.querySelector('#cartTotalPrice').innerHTML.replace(':-', '');
+    let mondayPrice = document
+      .querySelector('#cartTotalPrice')
+      .innerHTML.replace(':-', '');
 
     mondayPrice = Number(mondayPrice * 0.9);
     document.querySelector('#cartTotalPrice').innerHTML = mondayPrice + ':-';
@@ -671,7 +679,7 @@ function switchPaymentEventHandler(e) {
 }
 
 function switchPayment(paymentType) {
-  if(paymentType == 'paymentCard') {
+  if (paymentType == 'paymentCard') {
     paymentInvoiceBox.classList.remove('showPaymentInvoice');
     paymentInvoiceBox.classList.add('hiddenPaymentInvoice');
 
@@ -679,7 +687,7 @@ function switchPayment(paymentType) {
     paymentCardBox.classList.add('showPaymentCard');
   }
 
-  if(paymentType == 'paymentInvoice') {
+  if (paymentType == 'paymentInvoice') {
     paymentCardBox.classList.remove('showPaymentCard');
     paymentCardBox.classList.add('hiddenPaymentCard');
 
@@ -689,12 +697,20 @@ function switchPayment(paymentType) {
 }
 
 /*---------------------------------------------*/
+/*---------------Delivery time----------------*/
+/*---------------------------------------------*/
+
+function getDeliveryTimte() {}
+
+/*---------------------------------------------*/
 /*--------Clear form after 15 minutes---------*/
 /*---------------------------------------------*/
 
 function resetForm() {
   document.querySelector('.checkoutForm').reset();
-  alert('Nu tog det lite lång tid... Om du vill beställa får du fylla i formuläret igen.');
+  alert(
+    'Nu tog det lite lång tid... Om du vill beställa får du fylla i formuläret igen.'
+  );
 }
 
 setTimeout(resetForm, 1000 * 60 * 15);
@@ -713,4 +729,19 @@ function clearOrder() {
   }
   printShoppingCart();
   printProducts();
+}
+
+/*---------------------------------------------*/
+/*---Red frame when total price is changed----*/
+/*---------------------------------------------*/
+
+const redFrame = document.querySelector('#cartTotalPrice');
+
+function visualCartUpdate() {
+  redFrame.classList.add('redFrame');
+  setTimeout(clearRedFrame, 300);
+}
+
+function clearRedFrame() {
+  redFrame.classList.remove('redFrame');
 }
