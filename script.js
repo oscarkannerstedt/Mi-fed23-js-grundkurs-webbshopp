@@ -697,10 +697,72 @@ function switchPayment(paymentType) {
 }
 
 /*---------------------------------------------*/
+/*-Validate form, order button appears green--*/
+/*---------------------------------------------*/
+
+const orderButton = document.querySelector('#orderButton');
+orderButton.disabled = true;
+
+const validatedTexts = document.querySelectorAll('.checkoutValidatedText');
+const validatedCheckboxes = document.querySelectorAll('.checkoutValidatedCheckbox');
+const paymentCardRadio = document.querySelector('#paymentCard');
+const paymentInvoiceRadio = document.querySelector('#paymentInvoice');
+const socialSecurityNumber = document.querySelector('#socialSecurityNumber');
+
+for (let text of validatedTexts) {
+  text.addEventListener('input', validate);
+}
+
+for (let box of validatedCheckboxes) {
+  box.addEventListener('change', validate);
+}
+
+paymentCardRadio.addEventListener('change', validate);
+paymentInvoiceRadio.addEventListener('change', validate);
+
+function validate() {
+  let shouldEnable = true;
+
+  for (let text of validatedTexts) {
+    if (text.value == '' && window.getComputedStyle(text.parentElement.parentElement, null).display !== 'none') {
+      shouldEnable = false;
+    }
+  }
+
+  for (let box of validatedCheckboxes) {
+    if (!box.checked) {
+      shouldEnable = false;
+    }
+  }
+
+  if (!paymentCardRadio.checked && !paymentInvoiceRadio.checked) {
+    shouldEnable = false;
+  }
+
+  orderButton.disabled = !shouldEnable;
+}
+
+const checkoutForm = document.querySelector('.checkoutForm');
+checkoutForm.addEventListener('submit', order);
+
+/*---------------------------------------------*/
+/*-Validate form, When clicking order button--*/
+/*---------------------------------------------*/
+
+function order() {}
+
+/*---------------------------------------------*/
 /*---------------Delivery time----------------*/
 /*---------------------------------------------*/
 
-function getDeliveryTimte() {}
+function getDeliveryTimte() {
+  // Saturday or sunday delivery
+  if (now.getDay() === 7 || now.getDay() === 0) {
+    return '90 min.'; 
+  }
+  // Monday to friday delivery
+  return '30 min.';
+}
 
 /*---------------------------------------------*/
 /*--------Clear form after 15 minutes---------*/
