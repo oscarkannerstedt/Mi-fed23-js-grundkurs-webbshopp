@@ -142,7 +142,7 @@ header {
   img {
     padding-top: 15px;
     width: 160px;
-    height: 180px;
+    height: 160px;
 
   }
 
@@ -176,6 +176,7 @@ header {
     font-size: 1rem;
     margin-left: 10px;
     margin-right: 10px;
+
   }
 
   .addToCartBtn {
@@ -256,7 +257,8 @@ header {
   gap: 2rem;
 
   & button:first-child {
-    background-color: hsl(117, 35%, 50%, 1);
+    // background-color: hsl(117, 35%, 50%, 1);
+    background-color: green;
     color: hsla(0, 71%, 97%, 1);
   }
 }
@@ -387,3 +389,4 @@ header {
 @import 'tablet';
 @import 'desktop';
 @import 'desktop-large';
+@import 'dark-theme';

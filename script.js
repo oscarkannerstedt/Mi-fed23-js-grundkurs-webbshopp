@@ -7,7 +7,7 @@ let products = [
     rating: 5,
     img: [
       {
-        src: 'assets/photos/s-mores.png',
+        src: 'assets/photos/s-mores.jpg',
         alt: 'S`Mores donut.',
       },
     ],
@@ -21,7 +21,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/bacon-in-the-sun.png',
+        src: 'assets/photos/bacon-in-the-sun.jpg',
         alt: 'Bacon in the sun donut.',
       },
     ],
@@ -313,7 +313,7 @@ function printProducts() {
     <div class="images">
         <img src="${donutsArray[i].img[0].src}" alt="${
       donutsArray[i].img[0].alt
-    }" width="160" loading="lazy">
+    }" width="160" height="160" loading="lazy">
     </div>
     <h3 class="donutTitle">${donutsArray[i].name}</h3>
     <span class="donutRating fa">${stars}</span>
