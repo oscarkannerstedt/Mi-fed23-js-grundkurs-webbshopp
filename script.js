@@ -756,13 +756,95 @@ checkoutForm.addEventListener('submit', order);
 /*-Validate form, When clicking order button--*/
 /*---------------------------------------------*/
 
-function order() {}
+function order(evt) {
+  evt.preventDefault();
+
+  const zipCode = document.querySelector('#zipCode');
+  const zipCodeSpan = document.querySelector('#zipCodeSpan');
+  const phoneNumber = document.querySelector('#phoneNumber');
+  const phoneNumberSpan = document.querySelector('#phoneNumberSpan');
+  const socialSecurityNumber = document.querySelector('#socialSecurityNumber');
+  const socialSecurityNumberSpan = document.querySelector(
+    '#socialSecurityNumberSpan'
+  );
+
+  const regexZC = /^\d{3}[ ]?\d{2}$/;
+  const regexPN = /^(([+]46)\s*(7)|07)[02369]\s*(\d{4})\s*(\d{3})$/;
+  const regexSSN = /^(19|20)?[0-9]{6}[- ]?[0-9]{4}$/;
+
+  const orderMessage = document.querySelector('#orderMessage');
+  orderMessage.innerHTML = '';
+
+  zipCodeSpan.innerHTML = 'Postnummer';
+  zipCodeSpan.classList.remove('errorMessage');
+  phoneNumberSpan.innerHTML = 'Telefonnummer';
+  phoneNumberSpan.classList.remove('errorMessage');
+  socialSecurityNumberSpan.innerHTML = 'Personnummer';
+  socialSecurityNumberSpan.classList.remove('errorMessage');
+
+  let hasErrors = false;
+  let errors = [];
+
+  if (!regexZC.test(zipCode.value)) {
+    zipCodeSpan.innerHTML = 'Postnummer *';
+    zipCodeSpan.classList.add('errorMessage');
+
+    hasErrors = true;
+    errors.push('Fyll i ett giltligt postnummer!');
+  }
+
+  if (!regexPN.test(phoneNumber.value)) {
+    phoneNumberSpan.innerHTML = 'Telefonnummer *';
+    phoneNumberSpan.classList.add('errorMessage');
+
+    hasErrors = true;
+    errors.push('Fyll i ett giltligt telefonnummer!');
+  }
+
+  if (
+    window.getComputedStyle(
+      socialSecurityNumber.parentElement.parentElement,
+      null
+    ).display !== 'none' &&
+    !regexSSN.test(socialSecurityNumber.value)
+  ) {
+    socialSecurityNumberSpan.innerHTML = 'Personnummer *';
+    socialSecurityNumberSpan.classList.add('errorMessage');
+
+    hasErrors = true;
+    errors.push('Fyll i ett giltligt personnummer!');
+  }
+
+  if (hasErrors) {
+    for (let i = 0; i < errors.length; i++) {
+      if (i > 0) {
+        orderMessage.innerHTML += '<br>';
+      }
+      orderMessage.innerHTML += errors[i];
+    }
+  }
+
+  if (!hasErrors) {
+    const firstName = document.querySelector('#firstName');
+    alert(
+      `Tack för din beställning ${
+        firstName.value
+      }! Leverans sker om ${getDeliveryTime()}`
+    );
+
+    const formInputs = document.querySelectorAll('.lock');
+
+    for (let i = 0; i < formInputs.length; i++) {
+      formInputs[i].disabled = true;
+    }
+  }
+}
 
 /*---------------------------------------------*/
 /*---------------Delivery time----------------*/
 /*---------------------------------------------*/
 
-function getDeliveryTimte() {
+function getDeliveryTime() {
   // Saturday or sunday delivery
   if (now.getDay() === 7 || now.getDay() === 0) {
     return '90 min.';
