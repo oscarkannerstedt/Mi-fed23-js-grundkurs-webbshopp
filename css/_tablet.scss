@@ -35,9 +35,9 @@
     }
   }
 
-/*-------------------------------------*/
-/*-------------Product items----------*/
-/*-------------------------------------*/
+  /*-------------------------------------*/
+  /*-------------Product items----------*/
+  /*-------------------------------------*/
 
   .donutsWrapper {
     display: grid;
@@ -49,11 +49,11 @@
     margin: 0;
     width: 100%;
     grid-template-areas:
-      "donuts1 donuts2 donuts3"
-      "donuts4 donuts5 donuts6"
-      "donuts7 donuts8 donuts9"
-      "donuts10 donuts11 donuts12"
-      "donuts13 donuts14 donuts15"
-      "donuts16 donuts17 donuts18";
+      'donuts1 donuts2 donuts3'
+      'donuts4 donuts5 donuts6'
+      'donuts7 donuts8 donuts9'
+      'donuts10 donuts11 donuts12'
+      'donuts13 donuts14 donuts15'
+      'donuts16 donuts17 donuts18';
   }
 }

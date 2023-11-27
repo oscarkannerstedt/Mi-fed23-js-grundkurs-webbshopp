@@ -1,33 +1,28 @@
 @media (prefers-color-scheme: dark) {
-    .darkTheme {
-        // background-color: black;
-        background: #333;
-        color: white;
+  .darkTheme {
+    background: #333;
+    color: white;
+  }
+
+  .donutsWrapper {
+    article {
+      background-color: #426d7a;
+      margin: 0.5rem;
+      border: 1px solid #000;
+      border-radius: 0.5rem;
     }
+    .images {
+      background-color: white;
+      margin-top: 15px;
+      border: 1px solid #000;
+      border-radius: 0.5rem;
+    }
+    .addToCartBtn {
+      margin-bottom: 15px;
+    }
+  }
 
-    .donutsWrapper {
-        article {
-          background-color: #426d7a;
-          margin: 0.5rem;
-          border: 1px solid #000;
-          border-radius: 0.5rem;
-        }
-        .images {
-          background-color: white;
-          margin-top: 15px;
-          border: 1px solid #000;
-          border-radius: 0.5rem;
-      }
-      .addToCartBtn {
-        margin-bottom: 15px;
-      }
-      }
-    
-      .checkoutContainer .checkoutForm label span {
-        color: white;
-      }
-    
-
-
-
+  .checkoutContainer .checkoutForm label span {
+    color: white;
+  }
 }

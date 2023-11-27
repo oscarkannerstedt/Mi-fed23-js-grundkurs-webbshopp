@@ -630,7 +630,8 @@ function toDisplayPrice(num) {
 
 function giveMondayDiscount() {
   if (mondayDiscount) {
-    const msgToUser = 'Det är måndag morgon, så du får 10 % rabatt på din beställning';
+    const msgToUser =
+      'Det är måndag morgon, så du får 10 % rabatt på din beställning';
     document.querySelector('#msgToUser').innerText = msgToUser;
 
     let mondayPrice = document
@@ -704,7 +705,9 @@ const orderButton = document.querySelector('#orderButton');
 orderButton.disabled = true;
 
 const validatedTexts = document.querySelectorAll('.checkoutValidatedText');
-const validatedCheckboxes = document.querySelectorAll('.checkoutValidatedCheckbox');
+const validatedCheckboxes = document.querySelectorAll(
+  '.checkoutValidatedCheckbox'
+);
 const paymentCardRadio = document.querySelector('#paymentCard');
 const paymentInvoiceRadio = document.querySelector('#paymentInvoice');
 const socialSecurityNumber = document.querySelector('#socialSecurityNumber');
@@ -724,7 +727,11 @@ function validate() {
   let shouldEnable = true;
 
   for (let text of validatedTexts) {
-    if (text.value == '' && window.getComputedStyle(text.parentElement.parentElement, null).display !== 'none') {
+    if (
+      text.value == '' &&
+      window.getComputedStyle(text.parentElement.parentElement, null)
+        .display !== 'none'
+    ) {
       shouldEnable = false;
     }
   }
@@ -758,7 +765,7 @@ function order() {}
 function getDeliveryTimte() {
   // Saturday or sunday delivery
   if (now.getDay() === 7 || now.getDay() === 0) {
-    return '90 min.'; 
+    return '90 min.';
   }
   // Monday to friday delivery
   return '30 min.';

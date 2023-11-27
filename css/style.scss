@@ -1,4 +1,4 @@
-@import "vendor/normalize";
+@import 'vendor/normalize';
 
 * {
   box-sizing: border-box;
@@ -143,7 +143,6 @@ header {
     padding-top: 15px;
     width: 160px;
     height: 160px;
-
   }
 
   h3 {
@@ -176,7 +175,6 @@ header {
     font-size: 1rem;
     margin-left: 10px;
     margin-right: 10px;
-
   }
 
   .addToCartBtn {
@@ -332,9 +330,9 @@ header {
       position: relative;
       border-bottom: 1px solid #ddd;
 
-      input[type="text"],
-      input[type="number"],
-      input[type="email"] {
+      input[type='text'],
+      input[type='number'],
+      input[type='email'] {
         width: 100%;
         padding: 10px 0px;
         margin-top: 20px;

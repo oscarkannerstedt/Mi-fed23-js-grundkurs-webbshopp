@@ -1,60 +1,59 @@
 @media screen and (min-width: 1100px) {
+  /*-------------------------------------*/
+  /*-------------Product items----------*/
+  /*-------------------------------------*/
+  .donutsWrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 16% 16% 16% 16% 16%;
+    grid-template-rows: auto;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    grid-template-areas:
+      'donuts1 donuts2 donuts3 donuts4 donuts5'
+      'donuts6 donuts7 donuts8 donuts9 donuts10'
+      'donuts11 donuts12 donuts13 donuts14 donuts15'
+      'donuts16 donuts17 donuts18';
+  }
 
-/*-------------------------------------*/
-/*-------------Product items----------*/
-/*-------------------------------------*/
-    .donutsWrapper {
-        display: grid;
-        justify-content: center;
-        grid-template-columns: 16% 16% 16% 16% 16%;
-        grid-template-rows: auto;
-        gap: 0;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        grid-template-areas: 
-        'donuts1 donuts2 donuts3 donuts4 donuts5'
-        'donuts6 donuts7 donuts8 donuts9 donuts10'
-        'donuts11 donuts12 donuts13 donuts14 donuts15'
-        'donuts16 donuts17 donuts18';
-    }
+  /*-------------------------------------*/
+  /*-------------Shooping Cart----------*/
+  /*-------------------------------------*/
 
-/*-------------------------------------*/
-/*-------------Shooping Cart----------*/
-/*-------------------------------------*/
-
-.shoppingCart {
+  .shoppingCart {
     width: 90vw;
     max-width: 60rem;
     h2 {
       font-size: 1.8rem;
     }
     h3 {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
   }
 
-.shoppingCartProduct {
+  .shoppingCartProduct {
     img {
-        width: 120px;
-      }
+      width: 120px;
+    }
     p {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
   }
 
   .shoppingCartItemsPrice {
     span {
-        font-size: 1.1rem;
+      font-size: 1.1rem;
     }
   }
 
   .shoppingCartItemsCount {
     input {
-        font-size: 1rem;
+      font-size: 1rem;
     }
     button {
-        font-size: 1rem;
+      font-size: 1rem;
     }
   }
 
@@ -64,7 +63,7 @@
 
   .checkoutCartSum {
     span {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -74,7 +73,7 @@
 }
 
 .checkoutContainer {
-    h3 {
-        font-size: 1.6rem;
-    }
+  h3 {
+    font-size: 1.6rem;
+  }
 }
