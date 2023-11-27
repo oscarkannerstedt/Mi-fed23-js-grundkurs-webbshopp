@@ -49,7 +49,7 @@ let products = [
     rating: 3,
     img: [
       {
-        src: 'assets/photos/beach-ball.png',
+        src: 'assets/photos/beach-ball.jpg',
         alt: 'Beach ball donut.',
       },
     ],
@@ -63,7 +63,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/blueberry-pancake.png',
+        src: 'assets/photos/blueberry-pancake.jpg',
         alt: 'Blueberry pancake donut.',
       },
     ],
@@ -77,7 +77,7 @@ let products = [
     rating: 5,
     img: [
       {
-        src: 'assets/photos/cinnamon-bun.png',
+        src: 'assets/photos/cinnamon-bun.jpg',
         alt: 'Cinnamon bun donut.',
       },
     ],
@@ -91,7 +91,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/Chocolate-Explosion.png',
+        src: 'assets/photos/Chocolate-Explosion.jpg',
         alt: 'Chocolate explosion donut.',
       },
     ],
@@ -105,7 +105,7 @@ let products = [
     rating: 3,
     img: [
       {
-        src: 'assets/photos/chocolate-caramel-crunch.png',
+        src: 'assets/photos/chocolate-caramel-crunch.jpg',
         alt: 'Chocolate caramel crunch donut.',
       },
     ],
@@ -119,7 +119,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/cookies&cream.png',
+        src: 'assets/photos/cookies&cream.jpg',
         alt: 'Cookies & cream donut.',
       },
     ],
@@ -133,7 +133,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/french-toast.png',
+        src: 'assets/photos/french-toast.jpg',
         alt: 'French toast donut.',
       },
     ],
@@ -147,7 +147,7 @@ let products = [
     rating: 5,
     img: [
       {
-        src: 'assets/photos/Strawberry-Confetti.png',
+        src: 'assets/photos/Strawberry-Confetti.jpg',
         alt: 'Strawberry confetti donut.',
       },
     ],
@@ -161,7 +161,7 @@ let products = [
     rating: 3,
     img: [
       {
-        src: 'assets/photos/coconut-island-bliss.png',
+        src: 'assets/photos/coconut-island-bliss.jpg',
         alt: 'Coconut island bliss donut.',
       },
     ],
@@ -175,7 +175,7 @@ let products = [
     rating: 5,
     img: [
       {
-        src: 'assets/photos/Midnight-Madness.png',
+        src: 'assets/photos/Midnight-Madness.jpg',
         alt: 'Midnight madness donut.',
       },
     ],
@@ -189,7 +189,7 @@ let products = [
     rating: 3,
     img: [
       {
-        src: 'assets/photos/flip-flop.png',
+        src: 'assets/photos/flip-flop.jpg',
         alt: 'Flip flop donut.',
       },
     ],
@@ -203,7 +203,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/sunrise.png',
+        src: 'assets/photos/sunrise.jpg',
         alt: 'Sunrise donut.',
       },
     ],
@@ -217,7 +217,7 @@ let products = [
     rating: 5,
     img: [
       {
-        src: 'assets/photos/peanut-butter-jelly.png',
+        src: 'assets/photos/peanut-butter-jelly.jpg',
         alt: 'Peanut butter jelly donut.',
       },
     ],
@@ -231,7 +231,7 @@ let products = [
     rating: 5,
     img: [
       {
-        src: 'assets/photos/peanut-butter-paradise.png',
+        src: 'assets/photos/peanut-butter-paradise.jpg',
         alt: 'Peanut butter paradise donut.',
       },
     ],
@@ -245,7 +245,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/Strawberry-Shortcake.png',
+        src: 'assets/photos/Strawberry-Shortcake.jpg',
         alt: 'Strawberry shortcake donut.',
       },
     ],
