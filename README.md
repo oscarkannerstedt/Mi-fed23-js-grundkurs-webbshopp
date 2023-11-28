@@ -15,6 +15,9 @@
 <h4>Skärmdumpar</h4>
 <p>Bilderna är tagna i dark mode, light mode finns också.</p>
 <img src="/screenshots/desktop-large.png">
+<img src="/screenshots/desktop.png">
+<img src="/screenshots/tablet.png">
+<img src="/screenshots/mobile.png">
 
 
 
