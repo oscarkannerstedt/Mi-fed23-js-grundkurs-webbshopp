@@ -16,6 +16,9 @@
 
 
 <h4>Valideringsrapporter</h4>
+![validation-css](https://github.com/Medieinstitutet/fed23d-js-grundkurs-webshop-oscarkannerstedt/assets/112692728/ae2842ef-9605-4cbc-ad6e-99e7c4f7dc23)
+![validation-html](https://github.com/Medieinstitutet/fed23d-js-grundkurs-webshop-oscarkannerstedt/assets/112692728/b9a543fa-3f67-4f85-877b-9edec989a52f)
+
 
 <h4>Lighthouse rapport</h4>
 <img width="652" alt="Skärmbild 2023-11-27 100159" src="https://github.com/Medieinstitutet/fed23d-js-grundkurs-webshop-oscarkannerstedt/assets/112692728/1f63de7e-8fd0-4845-8d36-f2e8a49d7b35">
