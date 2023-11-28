@@ -1,2 +1,25 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/lVSydX1g)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12896430&assignment_repo_type=AssignmentRepo)
+<h1>Gottfrids Jästsons Munkar</h1>
+<h3>Skapad av: Oscar Kannerstedt</h3>
+
+<h4>Teknikstack</h4>
+<ul>
+  <li>HTML</li>
+  <li>CSS/SASS</li>
+  <li>Javascript</li>
+  <li>Prettier</li>
+</ul>
+
+<h4>Live sida</h4>
+<p>https://medieinstitutet.github.io/fed23d-js-grundkurs-webshop-oscarkannerstedt/</p>
+
+<h4>Skärmdumpar</h4>
+
+
+<h4>Valideringsrapporter</h4>
+<img src="/validation/validation-css.jpg">
+<img src="/validation/validation-html.jpg">
+
+
+<h4>Lighthouse rapport</h4>
+<img width="652" alt="Skärmbild 2023-11-27 100159" src="https://github.com/Medieinstitutet/fed23d-js-grundkurs-webshop-oscarkannerstedt/assets/112692728/1f63de7e-8fd0-4845-8d36-f2e8a49d7b35">
+<img width="626" alt="Skärmbild 2023-11-27 114050" src="https://github.com/Medieinstitutet/fed23d-js-grundkurs-webshop-oscarkannerstedt/assets/112692728/a271a3c5-0be6-4b18-9784-f13f2fa18f68">
