@@ -17,7 +17,7 @@
 <img src="/screenshots/desktop-large.png">
 <img src="/screenshots/desktop.png">
 <img src="/screenshots/tablet.png">
-<img src="/screenshots/mobile.png">
+<img src="/screenshots/mobile-big.png">
 
 
 
