@@ -16,7 +16,7 @@
 
 
 <h4>Valideringsrapporter</h4>
-![My Image](validation/validation-css.png)
+<img src="/validation/validation-css.jpg" alt="Alt text">
 
 
 <h4>Lighthouse rapport</h4>
