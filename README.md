@@ -13,6 +13,8 @@
 <p>https://medieinstitutet.github.io/fed23d-js-grundkurs-webshop-oscarkannerstedt/</p>
 
 <h4>Skärmdumpar</h4>
+<p>Bilderna är tagna i dark mode, light mode finns också.</p>
+
 
 
 <h4>Valideringsrapporter</h4>
