@@ -14,6 +14,7 @@
 
 <h4>Skärmdumpar</h4>
 <p>Bilderna är tagna i dark mode, light mode finns också.</p>
+<img src="/screenshots/127.0.0.1_5500_index.html(3).png">
 
 
 
