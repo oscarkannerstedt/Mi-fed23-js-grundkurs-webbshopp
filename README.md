@@ -16,8 +16,7 @@
 
 
 <h4>Valideringsrapporter</h4>
-![validation-css](https://github.com/Medieinstitutet/fed23d-js-grundkurs-webshop-oscarkannerstedt/assets/112692728/ae2842ef-9605-4cbc-ad6e-99e7c4f7dc23)
-![validation-html](https://github.com/Medieinstitutet/fed23d-js-grundkurs-webshop-oscarkannerstedt/assets/112692728/b9a543fa-3f67-4f85-877b-9edec989a52f)
+![My Image](validation/validation-css.png)
 
 
 <h4>Lighthouse rapport</h4>
