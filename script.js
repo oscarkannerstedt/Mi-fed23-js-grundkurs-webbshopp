@@ -119,7 +119,7 @@ let products = [
     rating: 4,
     img: [
       {
-        src: 'assets/photos/cookies&cream.jpg',
+        src: 'assets/photos/cookies&cream.png',
         alt: 'Cookies & cream donut.',
       },
     ],
