@@ -21,10 +21,12 @@
     }
     .material-symbols-outlined {
       font-size: 2.3rem;
-      margin-left: 100px;
+      margin-right: 15px;
     }
     .headerCountItems {
       font-size: 1.2rem;
+      top: -35px;
+      right: 40px;
     }
   }
 
@@ -64,5 +66,17 @@
       'donuts10 donuts11 donuts12'
       'donuts13 donuts14 donuts15'
       'donuts16 donuts17 donuts18';
+  }
+
+  /*-------------------------------------*/
+  /*---------------Footer---------------*/
+  /*-------------------------------------*/
+
+  footer {
+    min-height: 45px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 0.5rem;
+    margin-block-end: 1rem;
   }
 }
