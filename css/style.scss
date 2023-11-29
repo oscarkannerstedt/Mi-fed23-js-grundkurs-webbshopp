@@ -45,6 +45,7 @@ header {
   height: 50px;
   margin-bottom: 25px;
   font-family: $robotoCondensed-font-family;
+  position: relative;
 
   nav {
     background-color: white;
@@ -57,11 +58,61 @@ header {
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
+
+    .menuContainer {
+      display: flex;
+      align-items: center;
+
+      button {
+        width: 35px;
+        height: 35px;
+        background: transparent;
+        border: 0;
+
+        span {
+          display: block;
+          width: 25px;
+          height: 4px;
+          background-color: black;
+          border-radius: 6px;
+          margin-bottom: 4px;
+        }
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 50px;
+        left: 0;
+        background-color: white;
+        color: black;
+        z-index: 2;
+
+        span {
+          font-size: 2rem;
+          font-weight: 600;
+          margin-bottom: 30px;
+          cursor: pointer;
+        }
+      }
+      button.menu-open + .menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   a {
     color: black;
     text-decoration: none;
+    z-index: 4;
   }
 
   h1 {

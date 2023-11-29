@@ -1,4 +1,5 @@
-import products from "./products.mjs";
+import products from './products.mjs';
+import { hamburgerMenu } from './hamburgerMenu.mjs';
 
 /*---------------------------------------------*/
 /*---------------Dates & Times----------------*/
@@ -26,6 +27,7 @@ if (weekendPrices) {
 
 // updateTotalPrice();
 giveMondayDiscount();
+hamburgerMenu();
 
 /*---------------------------------------------*/
 /*----------Prints products to HTML-----------*/

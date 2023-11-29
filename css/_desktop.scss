@@ -1,5 +1,22 @@
 @media screen and (min-width: 900px) {
   /*-------------------------------------*/
+  /*----------Header & navigation-------*/
+  /*-------------------------------------*/
+
+  header nav {
+    .menuContainer .menu {
+      span {
+        font-size: 3.5rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .material-symbols-outlined {
+      margin-left: 200px;
+    }
+  }
+  /*-------------------------------------*/
   /*-------------Product items----------*/
   /*-------------------------------------*/
   .donutsWrapper {

@@ -6,12 +6,22 @@
     nav {
       padding-left: 30px;
       padding-right: 30px;
+
+      .menuContainer {
+        .menu {
+          span {
+            font-size: 3rem;
+            margin-bottom: 40px;
+          }
+        }
+      }
     }
     h1 {
       font-size: 2rem;
     }
     .material-symbols-outlined {
       font-size: 2.3rem;
+      margin-left: 100px;
     }
     .headerCountItems {
       font-size: 1.2rem;
