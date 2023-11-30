@@ -68,6 +68,8 @@ header {
         height: 35px;
         background: transparent;
         border: 0;
+        cursor: pointer;
+        position: relative;
 
         span {
           display: block;
@@ -76,6 +78,30 @@ header {
           background-color: black;
           border-radius: 6px;
           margin-bottom: 4px;
+          transition: transform 0.3s;
+        }
+        span:nth-child(1) {
+          transform-origin: 0% 100%;
+        }
+
+        span:nth-child(2) {
+          transform-origin: 50% 50%;
+        }
+
+        span:nth-child(3) {
+          transform-origin: 0% 0%;
+        }
+
+        &.menu-open span:nth-child(1) {
+          transform: rotate(45deg);
+        }
+
+        &.menu-open span:nth-child(2) {
+          visibility: hidden;
+        }
+
+        &.menu-open span:nth-child(3) {
+          transform: rotate(-45deg);
         }
       }
 
