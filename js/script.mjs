@@ -575,10 +575,14 @@ function order(evt) {
 
   if (!hasErrors) {
     const firstName = document.querySelector('#firstName');
+    const address = document.querySelector('#address');
+    const email = document.querySelector('#email');
     alert(
       `Tack för din beställning ${
         firstName.value
-      }! Leverans sker om ${getDeliveryTime()}`
+      }! Leverans sker om ${getDeliveryTime()} till ${
+        address.value
+      }.\nEn orderbekräftelse har skickats till ${email.value}.`
     );
 
     const formInputs = document.querySelectorAll('.lock');
@@ -596,10 +600,10 @@ function order(evt) {
 function getDeliveryTime() {
   // Saturday or sunday delivery
   if (now.getDay() === 7 || now.getDay() === 0) {
-    return '90 min.';
+    return '90 minuter';
   }
   // Monday to friday delivery
-  return '30 min.';
+  return '30 minuter';
 }
 
 /*---------------------------------------------*/
