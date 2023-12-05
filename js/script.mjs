@@ -62,7 +62,7 @@ function printProducts() {
     }" width="160" height="160" loading="lazy">
     </div>
     <h3 class="donutTitle">${donutsArray[i].name}</h3>
-    <span class="donutRating fa">${stars}</span>
+    <span class="donutRating fa" aria-label="rating donuts with stars">${stars}</span>
     <span class="donutPrice">Pris ${donutsArray[i].price}:-</span>
     <div id="productsCount" class="productsCount">
         <button id="subtract${
@@ -596,6 +596,7 @@ function order(evt) {
 /*---------------------------------------------*/
 
 function getDeliveryTime() {
+  const now = new Date();
   // Saturday or sunday delivery
   if (now.getDay() === 7 || now.getDay() === 0) {
     return '90 minuter';
