@@ -36,14 +36,14 @@
   <body class="darkTheme">
     <header id="header">
       <nav>
-        <a href="#header" aria-label="Navigera till första sidan">
+        <a href="#header" aria-label="Navigate to the first page">
           <h1>Gottfrid Jästson</h1>
         </a>
         <div class="menuContainer">
           <a
             class="material-symbols-outlined"
             href="#shoppingCart"
-            aria-label="Navigera till kundkorgen"
+            aria-label="Navigate to the shopping cart"
           >
             <p class="headerCountItems" id="headerCountItems"></p>
             <span class="material-symbols-outlined">shopping_cart</span>
@@ -54,9 +54,9 @@
             <span></span>
           </button>
           <div class="menu" id="menu">
-            <span>Produkter</span>
-            <span>Varukorg</span>
-            <span>Kontakt</span>
+            <span aria-label="navigate to the products">Produkter</span>
+            <span aria-label="navigate to the shopping cart">Varukorg</span>
+            <span aria-label="navigate to the contact page">Kontakt</span>
           </div>
         </div>
       </nav>
@@ -252,7 +252,9 @@
           </button>
           <p id="orderMessage"></p>
         </form>
-        <button id="clearOrder" class="clearOrder">Rensa beställning</button>
+        <button id="clearOrder" class="clearOrder" type="reset">
+          Rensa beställning
+        </button>
       </section>
       <footer id="footer">
         <p>Munkgatan 58</p>
