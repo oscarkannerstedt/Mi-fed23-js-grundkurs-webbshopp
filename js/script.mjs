@@ -1,31 +1,28 @@
 import products from './products.mjs';
 import { hamburgerMenu } from './hamburgerMenu.mjs';
 
-/*---------------------------------------------*/
-/*---------------Dates & Times----------------*/
-/*---------------------------------------------*/
-
-const now = new Date();
-
-const weekendPrices =
-  (now.getDay() === 5 && now.getHours() > 15) ||
-  now.getDay() === 6 ||
-  now.getDay() === 0 ||
-  (now.getDay() === 1 && now.getHours() < 3);
-const mondayDiscount = now.getDay() === 1 && now.getHours() < 10;
-
 /*-----------------------------------------------------*/
 /*Weekend prices 15% more friday 15.00 to monday 03.00*/
 /*-----------------------------------------------------*/
+function weekendPrice() {
+  const now = new Date();
 
-if (weekendPrices) {
-  products = products.map((donut) => {
-    donut.price = Math.round(donut.price * 1.15);
-    return donut;
-  });
+  const weekendPrices =
+    (now.getDay() === 5 && now.getHours() > 15) ||
+    now.getDay() === 6 ||
+    now.getDay() === 0 ||
+    (now.getDay() === 1 && now.getHours() < 3);
+
+  if (weekendPrices) {
+    products = products.map((donut) => {
+      donut.price = Math.round(donut.price * 1.15);
+      return donut;
+    });
+  }
 }
 
 // updateTotalPrice();
+weekendPrice();
 giveMondayDiscount();
 hamburgerMenu();
 
@@ -203,8 +200,6 @@ function addToCart(evt) {
   const donutsToAdd = products.find((donut) => donut.id == productItem.id);
   donutsToAdd.count = amountToAdd;
 
-  console.log(donutsToAdd);
-  console.log(amountToAdd);
   printShoppingCart();
 }
 
@@ -378,6 +373,9 @@ function toDisplayPrice(num) {
 /*---------------------------------------------*/
 
 function giveMondayDiscount() {
+  const now = new Date();
+  const mondayDiscount = now.getDay() === 1 && now.getHours() < 10;
+
   if (mondayDiscount) {
     const msgToUser =
       'Det är måndag morgon, så du får 10 % rabatt på din beställning';
