@@ -397,7 +397,7 @@ const discountInput = document.querySelector('#discount');
 discountInput.addEventListener('change', giveDiscount);
 
 function giveDiscount() {
-  if (discountInput.value == 'TOMTEN') {
+  if (discountInput.value == 'a_damn_fine-cup_of-coffee') {
     let newPrice = document
       .querySelector('#cartTotalPrice')
       .innerHTML.replace(':-', '');
