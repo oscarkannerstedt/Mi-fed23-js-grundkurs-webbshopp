@@ -853,7 +853,7 @@ function order(evt) {
 function getDeliveryTime() {
   const now = new Date();
   // Saturday or sunday delivery
-  if (now.getDay() === 7 || now.getDay() === 0) {
+  if (now.getDay() === 6 || now.getDay() === 0) {
     return '90 minuter';
   }
   // Monday to friday delivery
