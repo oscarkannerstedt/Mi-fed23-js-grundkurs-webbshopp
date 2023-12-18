@@ -1,6 +1,9 @@
 <h1>Gottfrids Jästsons Munkar</h1>
 <h3>Skapad av: Oscar Kannerstedt</h3>
 
+<h4>Live sida</h4>
+<p>https://oscarkannerstedt.github.io/Mi-fed23-js-grundkurs-webbshopp/</p>
+
 <h4>Teknikstack</h4>
 <ul>
   <li>HTML</li>
@@ -8,9 +11,6 @@
   <li>Javascript</li>
   <li>Prettier</li>
 </ul>
-
-<h4>Live sida</h4>
-<p>https://medieinstitutet.github.io/fed23d-js-grundkurs-webshop-oscarkannerstedt/</p>
 
 <h4>Skärmdumpar</h4>
 <p>Första bilden är tagen i light mode och resten med dark mode.</p>
